@@ -2,7 +2,7 @@ import React from 'react'
 import './spinner.css'
 
 const Spinner = () => {
-    return <div>Loading... Please, wait for some seconds</div>
+    return <div className='text-center spinner'>Загрузка данных... Пожалуйста, подождите</div>
 }
 
 export default Spinner

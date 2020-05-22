@@ -39,6 +39,19 @@ export const bookRemovedFromCart = (bookId) => {
     }
 }
 
+export const clearShoppingCart = () => {
+    return {
+        type: 'CLEAR_SHOPPING_CART'
+    }
+}
+
+export const booksSearch = (term) => {
+    return {
+        type: 'BOOKS_SEARCH',
+        payload: term
+    }
+}
+
 export const fetchBooks = bookstoreService => () => dispatch => {
     dispatch(booksRequested())
     bookstoreService.getBooks()

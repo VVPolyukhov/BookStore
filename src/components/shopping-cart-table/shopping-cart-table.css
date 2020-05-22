@@ -7,13 +7,26 @@
   text-align: center;
 }
 
+.shopping-cart-table .table-actions button {
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
 .shopping-cart-table .total {
   text-align: right;
   font-size: 1.3rem;
   margin-right: 10px;
 }
 
-.shopping-cart-table button {
-  margin-left: 5px;
-  margin-top: 5px;
+.shopping-cart-table .main-actions {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.shopping-cart-table .main-actions button {
+  margin-right: 10px;
+}
+
+.empty-shopping-cart {
+  margin-top: 50px;
 }

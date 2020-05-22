@@ -9,13 +9,13 @@ const ShopHeader = ( { numItems, orderTotal } ) => {
         <header className='shop-header row'>
             
             <Link to='/'>
-                <div className='logo text-dark'>Book Store</div>
+                <div className='logo text-dark'>Книжный магазин</div>
             </Link>
 
             <Link to='/cart'>
                 <div className='shopping-cart'>
                     <i className='cart-icon fa fa-shopping-cart' />
-                    {numItems} items (${orderTotal})
+                    Итого: {orderTotal} руб. ({numItems})
                 </div>
             </Link>
 
