@@ -1,5 +1,7 @@
 **Stack:**
 
-* ReactJS
+* JavaScript ES6+
+* React
+* React Router
 * Redux
 * Redux Thunk
