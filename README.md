@@ -7,3 +7,4 @@
 * Redux Thunk
 * Bootstrap
 * Semantic UI
+* Lodash
