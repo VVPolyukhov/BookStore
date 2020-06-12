@@ -1,47 +1,35 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { Grid, Card } from 'semantic-ui-react'
+import orderBy from 'lodash/orderBy'
 
 import BookListItem from '../book-list-item'
 import Spinner from '../spinner'
 import ErrorIndicator from '../error-indicator'
-import { fetchBooks, bookAddedToCart } from '../../actions'
 import { withBookstoreService } from '../hoc'
 import { compose } from '../../utils'
-import SearchPanel from '../search-panel'
+
+import { fetchBooks } from '../../actions/book-list'
+import { bookAddedToCart } from '../../actions/shopping-cart'
 
 import './book-list.css'
 
-const BookList = ({ books, term, onAddedToCart }) => {
-
-    const searchBooks = (books, term) => {
-        if (term.length === 0) {
-          return books;
-        }
-        return books.filter(book => {
-          return (book.title.toLowerCase().indexOf(term) > -1 || 
-            book.author.toLowerCase().indexOf(term) > -1);
-        });
-      }
-
-    const visibleBooks = searchBooks(books, term.toLowerCase())
-
+const BookList = ({ books, onAddedToCart }) => {
     return (
-        <div className='search-panel'>
-            <SearchPanel />
-            <ul className='book-list'>
+        <Grid.Column stretched width={13}>
+            <Card.Group itemsPerRow={4}>
                 {
-                    visibleBooks.map(book => {
+                    books.map((book, index) => {
                         return (
-                            <li key={book.id}>
-                                <BookListItem book={book}
-                                    onAddedToCart={() => onAddedToCart(book.id)} />
-                            </li>
+                            <BookListItem key={index}
+                                          book={book}
+                                          onAddedToCart={() => onAddedToCart(book.id)} />
                         )
                     })
                 }
-            </ul>
-        </div>
+            </Card.Group>
+        </Grid.Column>
     )
 }
 
@@ -52,7 +40,7 @@ class BookListContainer extends Component {
     }
 
     render() {
-        const { books, loading, error, term, onAddedToCart } = this.props
+        const { books, loading, error, onAddedToCart } = this.props
 
         if (loading)
             return <Spinner />
@@ -62,13 +50,43 @@ class BookListContainer extends Component {
 
         return <BookList 
             books={books}
-            term={term}
             onAddedToCart={onAddedToCart} />
     }
 }
 
-const mapStateToProps = ({ bookList: { books, loading, error, term } }) => {
-    return { books, loading, error, term }
+const sortBy = (books, filterBy) => {
+    switch (filterBy) {
+        case 'all':
+            return books
+        case 'low-price':
+            return orderBy(books, 'price', 'asc')
+        case 'high-price':
+            return orderBy(books, 'price', 'desc')
+        case 'bookName':
+            return orderBy(books, 'title', 'asc')
+        case 'author':
+            return orderBy(books, 'author', 'asc')
+        default:
+            return books
+    }
+}
+
+const searchBooks = (books, term) => {
+    if (term.length === 0) {
+        return books;
+    }
+    return books.filter(book => {
+        return (book.title.toLowerCase().indexOf(term) > -1 ||
+            book.author.toLowerCase().indexOf(term) > -1);
+    });
+}
+
+const mapStateToProps = ({ bookList: { books, loading, error, term, filterBy } }) => {
+    return { 
+        books: searchBooks(sortBy(books, filterBy), term.toLowerCase()),
+        loading, 
+        error
+    }
 }
 
 const mapDispatchToProps = (dispatch, { bookstoreService }) => {

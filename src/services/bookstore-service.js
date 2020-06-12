@@ -182,6 +182,4 @@ export default class BookstoreService {
       }, 700)
     })
   }
-
-
 }

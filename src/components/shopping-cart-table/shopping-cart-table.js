@@ -2,7 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux'
 
 import { BackToStore } from '../buttons'
-import { allBooksRemovedFromCart, bookRemovedFromCart, bookAddedToCart, clearShoppingCart } from '../../actions'
+import { allBooksRemovedFromCart,
+         bookRemovedFromCart,
+         bookAddedToCart,
+         clearShoppingCart } from '../../actions/shopping-cart'
 
 import './shopping-cart-table.css'
 

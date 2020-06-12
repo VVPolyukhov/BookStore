@@ -1,26 +1,27 @@
 import React from 'react'
+import { Card, Icon, Image } from 'semantic-ui-react'
 
 import './book-list-item.css'
 
 const BookListItem = ( { book, onAddedToCart } ) => {
     
-    const { title, author, price, coverImage } = book    
+    const { title, author, price, coverImage } = book
 
     return (
-        <div className='book-list-item'>
-
-            <div className='book-cover'>
-                <img src={coverImage} alt='cover'/>
-            </div>
-
-            <div className='book-details'>
-                <span className='book-title'>{title}</span>
-                <div className='book-author'>{author}</div>
-                <div className='book-price'>{price} руб.</div>
-                <button className='btn btn-info add-to-cart'
-                        onClick={onAddedToCart}>Добавить в корзину</button>
-            </div>
-        </div>
+        <Card>
+            <Image src={coverImage} alt='cover' wrapped ui={false} />
+            <Card.Content>
+                <Card.Header>{title}</Card.Header>
+                <Card.Meta>{author}</Card.Meta>
+                {/*<Card.Description>
+                    Description
+                </Card.Description>*/}
+            </Card.Content>
+            <Card.Content extra>
+                {price}
+                <Icon name='rub' />
+            </Card.Content>
+        </Card>
     )
 }
 
