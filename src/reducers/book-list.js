@@ -4,9 +4,7 @@ const updateBookList = (state, action) => {
     return {
       books: [],
       loading: true,
-      error: null,
-      term: '',
-      filterBy: 'all'
+      error: null
     };
   }
 
@@ -16,8 +14,7 @@ const updateBookList = (state, action) => {
         ...state.bookList,
         books: [],
         loading: true,
-        error: null,
-        term: ''
+        error: null
       };
 
     case 'FETCH_BOOKS_SUCCESS':
@@ -25,8 +22,7 @@ const updateBookList = (state, action) => {
         ...state.bookList,
         books: action.payload,
         loading: false,
-        error: null,
-        term: ''
+        error: null
       };
 
     case 'FETCH_BOOKS_FAILURE':
@@ -34,21 +30,8 @@ const updateBookList = (state, action) => {
         ...state.bookList,
         books: [],
         loading: false,
-        error: action.payload,
-        term: ''
+        error: action.payload
       };
-
-    case 'BOOKS_SEARCH': 
-      return {
-        ...state.bookList,
-        term: action.payload
-      }
-
-    case 'SET_FILTER':
-      return {
-        ...state.bookList,
-        filterBy: action.payload
-      }
 
     default:
       return state.bookList;

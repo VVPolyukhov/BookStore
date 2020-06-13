@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Menu, Input } from 'semantic-ui-react'
 
-import { booksSearch } from '../../actions/book-list';
+import { booksSearch } from '../../actions/filter';
 
 import './search-panel.css';
 
@@ -19,7 +19,7 @@ const SearchPanel = ({ term, onSearch }) => {
     );
 };
 
-const mapStateToProps = ({ bookList: { term } }) => {
+const mapStateToProps = ({ filter: { term } }) => {
     return { term }
 }
 

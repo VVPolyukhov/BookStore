@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 import { Grid, Card } from 'semantic-ui-react'
 import orderBy from 'lodash/orderBy'
 
@@ -11,7 +11,6 @@ import { withBookstoreService } from '../hoc'
 import { compose } from '../../utils'
 
 import { fetchBooks } from '../../actions/book-list'
-import { bookAddedToCart } from '../../actions/shopping-cart'
 
 import './book-list.css'
 
@@ -23,8 +22,7 @@ const BookList = ({ books, onAddedToCart }) => {
                     books.map((book, index) => {
                         return (
                             <BookListItem key={index}
-                                          book={book}
-                                          onAddedToCart={() => onAddedToCart(book.id)} />
+                                          book={book} />
                         )
                     })
                 }
@@ -81,9 +79,13 @@ const searchBooks = (books, term) => {
     });
 }
 
-const mapStateToProps = ({ bookList: { books, loading, error, term, filterBy } }) => {
+const mapStateToProps = ({ bookList: { books, loading, error }, 
+                           filter:   { term, filterBy } }) => {
     return { 
-        books: searchBooks(sortBy(books, filterBy), term.toLowerCase()),
+        books: books &&
+                sortBy(
+                    searchBooks(books, term.toLowerCase()), 
+                    filterBy),
         loading, 
         error
     }
@@ -91,8 +93,7 @@ const mapStateToProps = ({ bookList: { books, loading, error, term, filterBy } }
 
 const mapDispatchToProps = (dispatch, { bookstoreService }) => {
     return bindActionCreators({
-        fetchBooks: fetchBooks(bookstoreService),
-        onAddedToCart: bookAddedToCart
+        fetchBooks: fetchBooks(bookstoreService)
     }, dispatch);
 };
 

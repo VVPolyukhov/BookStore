@@ -1,8 +1,15 @@
 import React from 'react'
+import { Message } from 'semantic-ui-react'
+
 import './error-indicator.css'
 
 const ErrorIndicator = () => {
-    return <h4 className='text-center error-indicator'>Произошла ошибка!</h4>
+    return (
+        <Message negative compact className='error-indicator'>
+            <Message.Header>Произошла ошибка!</Message.Header>
+            <p>Пожалуйста, перезагрузите страницу...</p>
+        </Message>
+    )
 }
 
 export default ErrorIndicator

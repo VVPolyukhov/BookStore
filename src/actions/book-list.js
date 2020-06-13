@@ -18,23 +18,9 @@ const booksError = error => {
     }
 }
 
-export const booksSearch = term => {
-    return {
-        type: 'BOOKS_SEARCH',
-        payload: term
-    }
-}
-
 export const fetchBooks = bookstoreService => () => dispatch => {
     dispatch(booksRequested())
     bookstoreService.getBooks()
         .then(data => dispatch(booksLoaded(data)))
         .catch(error => dispatch(booksError(error)))
-}
-
-export const setFilter = filterBy => {
-    return {
-        type: 'SET_FILTER',
-        payload: filterBy
-    }
 }

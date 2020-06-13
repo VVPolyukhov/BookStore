@@ -4,7 +4,7 @@ import { Grid, Menu, Button } from 'semantic-ui-react'
 
 import SearchPanel from '../search-panel'
 
-import { setFilter } from '../../actions/book-list'
+import { setFilter } from '../../actions/filter'
 
 const SortingBlock = ({ setFilter, filterBy }) => {
 
@@ -43,7 +43,7 @@ const SortingBlock = ({ setFilter, filterBy }) => {
     )
 }
 
-const mapStateToProps = ({ bookList: { filterBy } }) => {
+const mapStateToProps = ({ filter: { filterBy } }) => {
     return { filterBy }
 }
 
