@@ -9,3 +9,4 @@
 * Semantic UI
 * Lodash
 * Axios
+* Local Storage

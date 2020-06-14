@@ -19,10 +19,14 @@ export const bookRemovedFromCart = (bookId) => {
     }
 }
 
-export const updateShoppingCart = (books) => {
+export const updateShoppingCart = (cartItems, orderTotal, numItems) => {
     return {
         type: 'UPDATE_SHOPPING_CART',
-        payload: books
+        payload: {
+            cartItems,
+            orderTotal,
+            numItems
+        }
     }
 }
 

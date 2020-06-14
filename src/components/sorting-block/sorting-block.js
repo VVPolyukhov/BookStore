@@ -32,7 +32,7 @@ const SortingBlock = ({ setFilter, filterBy }) => {
                 >По автору</Menu.Item>
             </Menu>
             {
-                filterBy === 'all' ? 
+                filterBy === 'all' || filterBy === null ? 
                 <Button disabled
                         size='small'>
                     Отменить сортировку</Button> :

@@ -18,6 +18,13 @@ const booksError = error => {
     }
 }
 
+export const setBooks = books => {
+    return {
+        type: 'SET_BOOKS',
+        payload: books
+    }
+}
+
 export const fetchBooks = bookstoreService => () => dispatch => {
     dispatch(booksRequested())
     bookstoreService.getBooks()

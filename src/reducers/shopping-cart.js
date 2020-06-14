@@ -43,10 +43,10 @@ const updateOrder = (state, bookId, quantity) => {
   const book = books.find(({id}) => id === bookId);
   const itemIndex = cartItems.findIndex(({id}) => id === bookId);
   const item = cartItems[itemIndex];
-  
   const newItem = updateCartItem(book, item, quantity)
 
   return {
+    ...state.shoppingCart,
     numItems: state.shoppingCart.numItems + quantity,
     orderTotal: state.shoppingCart.orderTotal + quantity * book.price,
     cartItems: updateCartItems(cartItems, newItem, itemIndex)
@@ -77,11 +77,14 @@ const updateShoppingCart = (state, action) => {
     case 'UPDATE_SHOPPING_CART':
       return {
         ...state.shoppingCart,
-        cartItems: action.payload
+        cartItems: action.payload.cartItems,
+        orderTotal: action.payload.orderTotal, 
+        numItems: action.payload.numItems 
       }
 
     case 'CLEAR_SHOPPING_CART':
       return {
+        ...state.shoppingCart,
         cartItems: [],
         orderTotal: 0,
         numItems: 0

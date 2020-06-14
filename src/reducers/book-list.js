@@ -33,6 +33,12 @@ const updateBookList = (state, action) => {
         error: action.payload
       };
 
+    case 'SET_BOOKS':
+      return {
+        ...state.bookList,
+        books: action.payload
+      }
+
     default:
       return state.bookList;
   }

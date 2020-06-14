@@ -18,10 +18,11 @@ const BookListItem = ( { book, onAddedToCart, particularBook } ) => {
                 <Card.Header className='text-center'>{title}</Card.Header>
                 <Card.Meta className='mt7 text-center'>{author}</Card.Meta>
             </Card.Content>
-            <Card.Content extra>
+            <Card.Content extra 
+                          className='text-center'>
                 Рейтинг:&nbsp;&nbsp;&nbsp;
                 <Rating icon="star" rating={rating} maxRating={5} />
-                &nbsp;{rating} / 5
+                &nbsp;&nbsp;&nbsp;{rating} / 5
             </Card.Content>
             <Card.Content extra>
                 <div className='text-center price-color'>
