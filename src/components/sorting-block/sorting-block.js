@@ -1,18 +1,19 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import { Grid, Menu, Button } from 'semantic-ui-react'
 
-import SearchPanel from '../search-panel'
-
-import { setFilter } from '../../actions/filter'
+import { SearchPanelContainer } from '../../containers'
 
 const SortingBlock = ({ setFilter, filterBy }) => {
 
     return (
         <Grid.Column width={3}>
-            <SearchPanel />
+            <SearchPanelContainer />
             <Menu fluid tabular text vertical>
                 <Menu.Item header>Сортировать:</Menu.Item>
+                <Menu.Item
+                    active={filterBy === 'popularity'}
+                    onClick={() => setFilter('popularity')}
+                >По популярности</Menu.Item>
                 <Menu.Item
                     active={filterBy === 'low-price'}
                     onClick={() => setFilter('low-price')}
@@ -43,12 +44,4 @@ const SortingBlock = ({ setFilter, filterBy }) => {
     )
 }
 
-const mapStateToProps = ({ filter: { filterBy } }) => {
-    return { filterBy }
-}
-
-const mapDispatchToProps = {
-    setFilter
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(SortingBlock)
+export default SortingBlock

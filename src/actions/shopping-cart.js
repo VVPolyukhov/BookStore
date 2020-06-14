@@ -19,6 +19,13 @@ export const bookRemovedFromCart = (bookId) => {
     }
 }
 
+export const updateShoppingCart = (books) => {
+    return {
+        type: 'UPDATE_SHOPPING_CART',
+        payload: books
+    }
+}
+
 export const clearShoppingCart = () => {
     return {
         type: 'CLEAR_SHOPPING_CART'

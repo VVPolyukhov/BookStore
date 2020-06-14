@@ -1,19 +1,16 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import { Card, Icon, Image, Button, Rating } from 'semantic-ui-react'
-
-import { bookAddedToCart } from '../../actions/shopping-cart'
 
 import './book-list-item.css'
 
 const BookListItem = ( { book, onAddedToCart, particularBook } ) => {
     
-    const { id, title, author, price, coverImage, rating } = book
+    const { id, title, author, price, image, rating } = book
 
     return (
         <Card>
             <div className="cover-image">
-                <Image src={coverImage}
+                <Image src={image}
                        alt='cover'
                        ui={true} />
             </div>
@@ -42,12 +39,4 @@ const BookListItem = ( { book, onAddedToCart, particularBook } ) => {
     )
 }
 
-const mapStateToProps = ({ shoppingCart: { cartItems } }, props) => {
-    return { particularBook: (cartItems.filter(item => item.id === props.book.id)).shift() }
-}
-
-const mapDispatchToProps = {
-    onAddedToCart: bookAddedToCart
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(BookListItem)
+export default BookListItem

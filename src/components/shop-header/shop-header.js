@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
 import { Button, Icon } from 'semantic-ui-react'
 
 import './shop-header.css'
@@ -15,7 +14,8 @@ const ShopHeader = ( { numItems, orderTotal } ) => {
 
             <Link to='/cart'>
                 <Button animated='vertical'
-                        color="blue">
+                        color='blue'
+                        className='shopping-cart-button'>
                     <Button.Content hidden>Перейти в корзину</Button.Content>
                     <Button.Content visible>
                         [{numItems}] &nbsp;- &nbsp; 
@@ -29,11 +29,4 @@ const ShopHeader = ( { numItems, orderTotal } ) => {
     )
 }
 
-const mapStateToProps = ( { shoppingCart: { numItems, orderTotal }} ) => {
-    return {
-        numItems,
-        orderTotal
-    }
-}
-
-export default connect(mapStateToProps)(ShopHeader)
+export default ShopHeader

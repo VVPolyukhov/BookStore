@@ -8,3 +8,4 @@
 * Bootstrap
 * Semantic UI
 * Lodash
+* Axios

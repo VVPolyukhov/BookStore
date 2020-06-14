@@ -12,3 +12,8 @@
     padding-left: 1rem;
     padding-top: 5px;
 }
+
+.shop-header .shopping-cart-button {
+    margin-right: 15px;
+    width: 245px;
+}

@@ -7,11 +7,6 @@
   text-align: center;
 }
 
-.shopping-cart-table .table-actions button {
-  margin-left: 5px;
-  margin-top: 5px;
-}
-
 .shopping-cart-table .total {
   text-align: right;
   font-size: 1.3rem;
@@ -29,4 +24,12 @@
 
 .empty-shopping-cart {
   margin-top: 50px;
+}
+
+button:focus {
+  outline: 0!important;
+  outline-color: transparent!important;
+  outline-width: 0!important;
+  outline-style: none!important;
+  box-shadow: 0 0 0 0 rgba(0,123,255,0)!important;
 }

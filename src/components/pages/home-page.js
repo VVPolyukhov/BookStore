@@ -1,14 +1,14 @@
 import React from 'react'
 import { Grid } from 'semantic-ui-react'
 
-import BookList from '../book-list'
-import SortingBlock from '../sorting-block'
+import { BookListContainer, 
+         SortingBlockContainer } from '../../containers'
 
 const HomePage = () => {
     return(
         <Grid>
-            <SortingBlock />
-            <BookList />
+            <SortingBlockContainer />
+            <BookListContainer />
         </Grid> 
     )
 }

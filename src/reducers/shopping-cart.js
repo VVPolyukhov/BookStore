@@ -74,6 +74,12 @@ const updateShoppingCart = (state, action) => {
       const item = state.shoppingCart.cartItems.find(({id}) => id === action.payload);
       return updateOrder(state, action.payload, -item.count);
 
+    case 'UPDATE_SHOPPING_CART':
+      return {
+        ...state.shoppingCart,
+        cartItems: action.payload
+      }
+
     case 'CLEAR_SHOPPING_CART':
       return {
         cartItems: [],

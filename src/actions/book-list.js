@@ -21,6 +21,6 @@ const booksError = error => {
 export const fetchBooks = bookstoreService => () => dispatch => {
     dispatch(booksRequested())
     bookstoreService.getBooks()
-        .then(data => dispatch(booksLoaded(data)))
+        .then(response => dispatch(booksLoaded(response.data)))
         .catch(error => dispatch(booksError(error)))
 }

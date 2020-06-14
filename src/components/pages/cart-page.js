@@ -1,9 +1,9 @@
 import React from 'react'
 
-import ShoppingCartTable from '../shopping-cart-table'
+import { ShoppingCartTableContainer } from '../../containers'
 
 const CartPage = () => {
-    return <ShoppingCartTable />
+    return <ShoppingCartTableContainer />
 }
 
 export default CartPage
