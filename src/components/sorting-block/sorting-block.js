@@ -9,27 +9,27 @@ const SortingBlock = ({ setFilter, filterBy }) => {
         <Grid.Column width={3}>
             <SearchPanelContainer />
             <Menu fluid tabular text vertical>
-                <Menu.Item header>Сортировать:</Menu.Item>
+                <Menu.Item header>Сортировать по:</Menu.Item>
                 <Menu.Item
                     active={filterBy === 'popularity'}
                     onClick={() => setFilter('popularity')}
-                >По популярности</Menu.Item>
+                >Популярности</Menu.Item>
                 <Menu.Item
                     active={filterBy === 'low-price'}
                     onClick={() => setFilter('low-price')}
-                >По цене (сначала дешевые)</Menu.Item>
+                >Цене (сначала дешевые)</Menu.Item>
                 <Menu.Item
                     active={filterBy === 'high-price'}
                     onClick={() => setFilter('high-price')}
-                >По цене (сначала дорогие)</Menu.Item>
+                >Цене (сначала дорогие)</Menu.Item>
                 <Menu.Item
                     active={filterBy === 'bookName'}
                     onClick={() => setFilter('bookName')}
-                >По названию книги</Menu.Item>
+                >Названию книги</Menu.Item>
                 <Menu.Item
                     active={filterBy === 'author'}
                     onClick={() => setFilter('author')}
-                >По автору</Menu.Item>
+                >Автору</Menu.Item>
             </Menu>
             {
                 filterBy === 'all' || filterBy === null ? 
