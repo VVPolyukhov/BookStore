@@ -40,7 +40,8 @@ const ShoppingCartTable = ( { items, total, onIncrease, onDecrease, onDelete, on
       <div className='main-actions'>
         <BackToStore/>
         <button className="btn btn-danger"
-          onClick={() => onClearCart()}>
+          onClick={() => onClearCart()}
+          >
           Очистить корзину
         </button>
       </div>

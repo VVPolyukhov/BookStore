@@ -20,9 +20,9 @@ const BookListItem = ( { book, onAddedToCart, particularBook } ) => {
             </Card.Content>
             <Card.Content extra 
                           className='text-center'>
-                Рейтинг:&nbsp;&nbsp;&nbsp;
+                Рейтинг:&nbsp;&nbsp;
                 <Rating icon="star" rating={rating} maxRating={5} />
-                &nbsp;&nbsp;&nbsp;{rating} / 5
+                &nbsp;&nbsp;{rating} / 5
             </Card.Content>
             <Card.Content extra>
                 <div className='text-center price-color'>

@@ -5,6 +5,7 @@
 * React Router
 * Redux
 * Redux Thunk
+* Jest
 * Bootstrap
 * Semantic UI
 * Lodash

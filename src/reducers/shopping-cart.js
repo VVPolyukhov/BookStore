@@ -37,7 +37,8 @@ const updateCartItem = (book, item = {}, quantity) => {
   };
 };
 
-const updateOrder = (state, bookId, quantity) => {
+export const updateOrder = (state, bookId, quantity) => {
+
   const { bookList: { books }, shoppingCart: { cartItems }} = state;
 
   const book = books.find(({id}) => id === bookId);
