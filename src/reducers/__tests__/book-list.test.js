@@ -42,9 +42,8 @@ describe('updateBookList function:', () => {
         ]
 
         const result = {
-            books,
-            loading: false,
-            error: false
+            ...state.bookList,
+            books
         };
 
         expect(updateBookList(state, setBooks(books))).toEqual(result)
