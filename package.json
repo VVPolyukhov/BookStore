@@ -40,9 +40,6 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-transform-modules-commonjs": "^7.10.1",
-    "fetch-mock": "^9.10.1",
-    "node-fetch": "^2.6.0",
-    "redux-mock-store": "^1.5.4"
+    "@babel/plugin-transform-modules-commonjs": "^7.10.1"
   }
 }
