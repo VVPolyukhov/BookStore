@@ -3,7 +3,7 @@ import React from 'react';
 import { BackToStore } from '../buttons'
 import ShoppingCartTableRow from '../shopping-cart-table-row'
 
-import './shopping-cart-table.css'
+import './shopping-cart-table.scss'
 
 const ShoppingCartTable = ( { items, total, onIncrease, onDecrease, onDelete, onClearCart } ) => {
 

@@ -3,8 +3,6 @@ import { Grid, Card } from 'semantic-ui-react'
 
 import { BookListItemContainer } from '../../containers'
 
-import './book-list.css'
-
 const BookList = ({ books }) => {
     return (
         <Grid.Column stretched width={13}>

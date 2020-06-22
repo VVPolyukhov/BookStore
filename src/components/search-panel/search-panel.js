@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu, Input } from 'semantic-ui-react'
 
-import './search-panel.css';
+import './search-panel.scss';
 
 const SearchPanel = ({ term, onSearch }) => {
     return (

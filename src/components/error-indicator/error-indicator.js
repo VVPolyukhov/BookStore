@@ -1,7 +1,7 @@
 import React from 'react'
 import { Message } from 'semantic-ui-react'
 
-import './error-indicator.css'
+import './error-indicator.scss'
 
 const ErrorIndicator = () => {
     return (

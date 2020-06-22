@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './shopping-cart-table-row.css'
+import './shopping-cart-table-row.scss'
 
 const ShoppingCartTableRow = ({ item, idx, onDecrease, onIncrease, onDelete }) => {
 

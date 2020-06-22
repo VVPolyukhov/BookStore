@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, Icon, Image, Button, Rating } from 'semantic-ui-react'
 
-import './book-list-item.css'
+import './book-list-item.scss'
 
 const BookListItem = ( { book, onAddedToCart, particularBook } ) => {
     
