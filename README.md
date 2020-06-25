@@ -1,3 +1,5 @@
+Demo - https://vvpolyukhov.github.io/BookStore/
+
 **Stack:**
 
 * JavaScript ES6+
