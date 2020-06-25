@@ -6,7 +6,7 @@ import './shop-header.scss'
 
 const ShopHeader = ( { numItems, orderTotal } ) => {
     return (
-        <header className='shop-header row'>
+        <header className='shop-header'>
             
             <Link to='/'>
                 <div className='logo text-dark'>Книжный магазин</div>

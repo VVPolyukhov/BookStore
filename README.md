@@ -6,6 +6,7 @@
 * Redux
 * Redux Thunk
 * Jest
+* SCSS
 * Bootstrap
 * Semantic UI
 * Lodash
