@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-import { HomePage, CartPage } from '../pages'
+import { HomePage, CartPage, NotFoundPage } from '../pages'
 import { ShopHeaderContainer } from '../../containers'
 
 const App = () => {
@@ -13,8 +13,8 @@ const App = () => {
                     component={HomePage}
                     exact />
                 <Route path='/cart'
-                    component={CartPage}
-                />
+                    component={CartPage} />
+                <Route component={NotFoundPage} />
             </Switch>
         </main>
     )
