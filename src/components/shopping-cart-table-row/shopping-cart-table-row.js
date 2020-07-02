@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import './shopping-cart-table-row.scss'
 
@@ -32,6 +33,19 @@ const ShoppingCartTableRow = ({ item, idx, onDecrease, onIncrease, onDelete }) =
         </td>
       </tr>
     )
-  }
+}
 
-  export default ShoppingCartTableRow
+ShoppingCartTableRow.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    count: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    total: PropTypes.number.isRequired
+  }).isRequired, 
+  idx: PropTypes.number.isRequired, 
+  onDecrease: PropTypes.func.isRequired, 
+  onIncrease: PropTypes.func.isRequired, 
+  onDelete: PropTypes.func.isRequired
+}
+
+export default ShoppingCartTableRow

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Grid, Card } from 'semantic-ui-react'
+import PropTypes from 'prop-types'
 
 import { BookListItemContainer } from '../../containers'
 
@@ -18,6 +19,10 @@ const BookList = ({ books }) => {
             </Card.Group>
         </Grid.Column>
     )
+}
+
+BookList.propTypes = {
+    books: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default BookList

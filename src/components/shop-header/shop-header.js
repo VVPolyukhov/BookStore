@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Icon } from 'semantic-ui-react'
+import PropTypes from 'prop-types'
 
 import './shop-header.scss'
 
@@ -27,6 +28,11 @@ const ShopHeader = ( { numItems, orderTotal } ) => {
 
         </header>
     )
+}
+
+ShopHeader.propTypes = {
+    numItems: PropTypes.number.isRequired,
+    orderTotal: PropTypes.number.isRequired
 }
 
 export default ShopHeader

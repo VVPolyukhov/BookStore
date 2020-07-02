@@ -11,13 +11,14 @@ Demo - https://vvpolyukhov.github.io/BookStore/
 * React Router
 * Redux
 * Redux Thunk
+* Prop-Types
 * Jest
 * SCSS
 * Bootstrap
 * Semantic UI
-* Lodash
-* Axios
 * Local Storage
+* Axios
+* Lodash
 
 -----
 
