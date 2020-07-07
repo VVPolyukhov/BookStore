@@ -1,4 +1,19 @@
-const updateCartItems = (cartItems, item, idx) => {
+import { ReducerType, ActionType } from ".";
+
+type CartItemType = {
+  id?: number,
+  count?: number,
+  title?: string,
+  total?: number
+}
+
+export type ShoppingCartReducerType = {
+  cartItems: Array<CartItemType>,
+  orderTotal: number,
+  numItems: number
+}
+
+const updateCartItems = (cartItems: Array<CartItemType>, item: CartItemType, idx: number) : Array<CartItemType> => {
 
   if (item.count === 0) {
     return [
@@ -21,13 +36,13 @@ const updateCartItems = (cartItems, item, idx) => {
   ];
 };
 
-const updateCartItem = (book, item = {}, quantity) => {
+const updateCartItem = (book: any, item = {}, quantity: number) : CartItemType => {
 
   const {
     id = book.id,
     count = 0,
     title = book.title,
-    total = 0 } = item;
+    total = 0 } : CartItemType = item;
 
   return {
     id,
@@ -37,12 +52,12 @@ const updateCartItem = (book, item = {}, quantity) => {
   };
 };
 
-export const updateOrder = (state, bookId, quantity) => {
+export const updateOrder = (state: ReducerType, bookId: number, quantity: number) : ShoppingCartReducerType => {
 
   const { bookList: { books }, shoppingCart: { cartItems }} = state;
 
-  const book = books.find(({id}) => id === bookId);
-  const itemIndex = cartItems.findIndex(({id}) => id === bookId);
+  const book : any = books.find(({id}:any) => id === bookId);
+  const itemIndex = cartItems.findIndex(({id}:any) => id === bookId);
   const item = cartItems[itemIndex];
   const newItem = updateCartItem(book, item, quantity)
 
@@ -54,14 +69,16 @@ export const updateOrder = (state, bookId, quantity) => {
   };
 };
 
-const updateShoppingCart = (state, action) => {
+const updateShoppingCart = (state: ReducerType, action: ActionType): ShoppingCartReducerType => {
+
+  const initialState: ShoppingCartReducerType = {
+    cartItems: [],
+    orderTotal: 0,
+    numItems: 0
+  }
 
   if (state === undefined) {
-    return {
-      cartItems: [],
-      orderTotal: 0,
-      numItems: 0
-    }
+    return initialState
   }
 
   switch(action.type) {
@@ -72,7 +89,7 @@ const updateShoppingCart = (state, action) => {
       return updateOrder(state, action.payload, -1);
 
     case 'ALL_BOOKS_REMOVED_FROM_CART':
-      const item = state.shoppingCart.cartItems.find(({id}) => id === action.payload);
+      const item : any = state.shoppingCart.cartItems.find(({id} : any) => id === action.payload);
       return updateOrder(state, action.payload, -item.count);
 
     case 'UPDATE_SHOPPING_CART':

@@ -7,6 +7,7 @@ Demo - https://vvpolyukhov.github.io/BookStore/
 **Stack:**
 
 * JavaScript ES6+
+* TypeScript
 * React
 * React Router
 * Redux

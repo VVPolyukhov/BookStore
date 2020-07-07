@@ -1,11 +1,21 @@
-const updateBookList = (state, action) => {
+import { ReducerType, ActionType } from '.'
+
+export type BookListReducerType = {
+  books: Array<Object>,
+  loading: boolean,
+  error: boolean | null
+}
+
+const updateBookList = (state: ReducerType, action: ActionType): BookListReducerType => {
+
+  const initialState: BookListReducerType = {
+    books: [],
+    loading: true,
+    error: null
+  }
 
   if (state === undefined) {
-    return {
-      books: [],
-      loading: true,
-      error: null
-    };
+    return initialState
   }
 
   switch (action.type) {
