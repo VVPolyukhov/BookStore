@@ -1,10 +1,10 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-import { routes } from '../../routes'
+import { routes, RouteType } from '../../routes'
 import { ShopHeaderContainer } from '../../containers'
 
-const App = () => {
+const App : React.FC = () => {
     return (
         <main role='main' className='container'>
 
@@ -12,7 +12,7 @@ const App = () => {
 
             <Switch>
                 {
-                    routes.map(route => {
+                    routes.map((route : RouteType) => {
                         return (
                             <Route
                                 key={route.path}

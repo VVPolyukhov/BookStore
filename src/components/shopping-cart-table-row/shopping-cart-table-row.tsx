@@ -1,9 +1,18 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import './shopping-cart-table-row.scss'
+import { CartItemType } from '../../types'
 
-const ShoppingCartTableRow = ({ item, idx, onDecrease, onIncrease, onDelete }) => {
+type PropsType = {
+  item: CartItemType, 
+  idx: number, 
+  onDecrease: (id : number | undefined) => void, 
+  onIncrease: (id : number | undefined) => void, 
+  onDelete: (id : number | undefined) => void
+}
+
+const ShoppingCartTableRow : React.FC<PropsType> = 
+  ({ item, idx, onDecrease, onIncrease, onDelete }) => {
 
     const { id, title, count, total } = item
     
@@ -33,19 +42,6 @@ const ShoppingCartTableRow = ({ item, idx, onDecrease, onIncrease, onDelete }) =
         </td>
       </tr>
     )
-}
-
-ShoppingCartTableRow.propTypes = {
-  item: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    count: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    total: PropTypes.number.isRequired
-  }).isRequired, 
-  idx: PropTypes.number.isRequired, 
-  onDecrease: PropTypes.func.isRequired, 
-  onIncrease: PropTypes.func.isRequired, 
-  onDelete: PropTypes.func.isRequired
 }
 
 export default ShoppingCartTableRow

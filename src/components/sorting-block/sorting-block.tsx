@@ -4,7 +4,12 @@ import PropTypes from 'prop-types'
 
 import { SearchPanelContainer } from '../../containers'
 
-const SortingBlock = ({ setFilter, filterBy }) => {
+type PropsType = {
+    setFilter: (filterBy: string) => void, 
+    filterBy: string
+}
+
+const SortingBlock: React.FC<PropsType> = ({ setFilter, filterBy }) => {
 
     return (
         <Grid.Column width={3}>

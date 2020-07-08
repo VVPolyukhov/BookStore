@@ -1,4 +1,5 @@
-import { ReducerType, ActionType } from '.'
+import { ReducerType } from '.'
+import { ActionType } from '../types'
 
 export type BookListReducerType = {
   books: Array<Object>,

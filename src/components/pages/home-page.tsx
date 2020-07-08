@@ -4,7 +4,7 @@ import { Grid } from 'semantic-ui-react'
 import { BookListContainer, 
          SortingBlockContainer } from '../../containers'
 
-const HomePage = () => {
+const HomePage : React.FC = () => {
     return(
         <Grid>
             <SortingBlockContainer />

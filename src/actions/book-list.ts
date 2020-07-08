@@ -1,18 +1,9 @@
-import { ActionType } from "../reducers"
+import { ActionType, BookType, ErrorType } from "../types"
 
 const booksRequested = () : ActionType => {
     return {
         type: 'FETCH_BOOKS_REQUEST'
     }
-}
-
-type BookType = {
-    id: number
-    title: string
-    author: string
-    image: string
-    price: number
-    rating: number
 }
 
 const booksLoaded = (newBooks: Array<BookType>) : ActionType => {
@@ -21,8 +12,6 @@ const booksLoaded = (newBooks: Array<BookType>) : ActionType => {
         payload: newBooks
     }
 }
-
-type ErrorType = string | boolean
 
 const booksError = (error : ErrorType) : ActionType => {
     return {

@@ -1,11 +1,5 @@
-import { ReducerType, ActionType } from ".";
-
-type CartItemType = {
-  id?: number,
-  count?: number,
-  title?: string,
-  total?: number
-}
+import { ReducerType } from ".";
+import { ActionType, CartItemType, BookType } from "../types";
 
 export type ShoppingCartReducerType = {
   cartItems: Array<CartItemType>,
@@ -36,7 +30,7 @@ const updateCartItems = (cartItems: Array<CartItemType>, item: CartItemType, idx
   ];
 };
 
-const updateCartItem = (book: any, item = {}, quantity: number) : CartItemType => {
+const updateCartItem = (book: BookType, item = {}, quantity: number) : CartItemType => {
 
   const {
     id = book.id,

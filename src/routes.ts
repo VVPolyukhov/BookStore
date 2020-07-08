@@ -4,6 +4,12 @@ import {
     NotFoundPage
 } from './components/pages'
 
+export type RouteType = {
+    path: string
+    isExact: boolean
+    component: React.FC
+}
+
 export const routes = [
     {
         path: '/',

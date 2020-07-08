@@ -1,10 +1,17 @@
 import React from 'react'
 import { Card, Icon, Image, Button, Rating } from 'semantic-ui-react'
-import PropTypes from 'prop-types'
 
 import './book-list-item.scss'
 
-const BookListItem = ( { book, onAddedToCart, particularBook } ) => {
+import { BookType, CartItemType } from '../../types'
+
+type PropType = {
+    book : BookType, 
+    onAddedToCart: (id : number) => void, 
+    particularBook: CartItemType
+}
+
+const BookListItem : React.FC<PropType> = ( { book, onAddedToCart, particularBook } ) => {
     
     const { id, title, author, price, image, rating } = book
 
@@ -39,12 +46,6 @@ const BookListItem = ( { book, onAddedToCart, particularBook } ) => {
             </Button>
         </Card>
     )
-}
-
-BookListItem.propTypes = {
-    book: PropTypes.object.isRequired,
-    onAddedToCart: PropTypes.func.isRequired,
-    particularBook: PropTypes.object
 }
 
 export default BookListItem

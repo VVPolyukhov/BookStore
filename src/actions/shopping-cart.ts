@@ -1,4 +1,4 @@
-import { ActionType } from "../reducers"
+import { ActionType, CartItemType } from "../types"
 
 export const bookAddedToCart = (bookId : number) : ActionType => {
     return {
@@ -21,7 +21,8 @@ export const bookRemovedFromCart = (bookId : number) : ActionType => {
     }
 }
 
-export const updateShoppingCart = (cartItems : Array<Object>, orderTotal : number, numItems : number) : ActionType => {
+export const updateShoppingCart = 
+    (cartItems : Array<CartItemType>, orderTotal : number, numItems : number) : ActionType => {
     return {
         type: 'UPDATE_SHOPPING_CART',
         payload: {

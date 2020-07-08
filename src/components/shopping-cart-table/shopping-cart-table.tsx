@@ -1,12 +1,27 @@
-import React from 'react';
-import PropTypes from 'prop-types'
-
+import React from 'react'
 import { BackToStore } from '../buttons'
 import ShoppingCartTableRow from '../shopping-cart-table-row'
 
 import './shopping-cart-table.scss'
 
-const ShoppingCartTable = ( { items, total, onIncrease, onDecrease, onDelete, onClearCart } ) => {
+type CartItemType = {
+  id: number,
+  count: number,
+  title: string,
+  total: number
+}
+
+type PropsType = {
+  items: Array<CartItemType>, 
+  total: number, 
+  onIncrease: () => void, 
+  onDecrease: () => void, 
+  onDelete: () => void, 
+  onClearCart: () => void
+}
+
+const ShoppingCartTable : React.FC<PropsType> = 
+  ( { items, total, onIncrease, onDecrease, onDelete, onClearCart } ) => {
   return (
     <div className="shopping-cart-table">
       <h2>Ваша корзина:</h2>
@@ -23,12 +38,13 @@ const ShoppingCartTable = ( { items, total, onIncrease, onDecrease, onDelete, on
 
         <tbody>
           {
-            items.map((item, idx) => <ShoppingCartTableRow item={item}
-                                                           key={idx}
-                                                           idx={idx}
-                                                           onIncrease={onIncrease}
-                                                           onDecrease={onDecrease}
-                                                           onDelete={onDelete}/>)
+            items.map((item: CartItemType, idx: number) =>
+              <ShoppingCartTableRow item={item}
+                key={idx}
+                idx={idx}
+                onIncrease={onIncrease}
+                onDecrease={onDecrease}
+                onDelete={onDelete} />)
           }
         </tbody>
       </table>
@@ -47,15 +63,6 @@ const ShoppingCartTable = ( { items, total, onIncrease, onDecrease, onDelete, on
       </div>
     </div>
   )
-}
-
-ShoppingCartTable.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.object).isRequired, 
-  total: PropTypes.number.isRequired, 
-  onIncrease: PropTypes.func.isRequired, 
-  onDecrease: PropTypes.func.isRequired, 
-  onDelete: PropTypes.func.isRequired, 
-  onClearCart: PropTypes.func.isRequired
 }
 
 export default ShoppingCartTable

@@ -1,15 +1,19 @@
 import React from 'react'
 import { Grid, Card } from 'semantic-ui-react'
-import PropTypes from 'prop-types'
 
 import { BookListItemContainer } from '../../containers'
+import { BookType } from '../../types'
 
-const BookList = ({ books }) => {
+type PropsType = {
+    books: Array<BookType>
+}
+
+const BookList : React.FC<PropsType> = ({ books }) => {
     return (
         <Grid.Column stretched width={13}>
             <Card.Group itemsPerRow={4}>
                 {
-                    books.map((book, index) => {
+                    books.map((book : BookType, index : number) => {
                         return (
                             <BookListItemContainer key={index}
                                                    book={book} />
@@ -19,10 +23,6 @@ const BookList = ({ books }) => {
             </Card.Group>
         </Grid.Column>
     )
-}
-
-BookList.propTypes = {
-    books: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default BookList

@@ -3,7 +3,7 @@ import { Message } from 'semantic-ui-react'
 
 import './error-indicator.scss'
 
-const ErrorIndicator = () => {
+const ErrorIndicator : React.FC = () => {
     return (
         <Message negative compact className='error-indicator'>
             <Message.Header>Произошла ошибка!</Message.Header>

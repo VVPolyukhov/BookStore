@@ -1,4 +1,4 @@
-import { ActionType } from "../reducers"
+import { ActionType } from "../types"
 
 export const booksSearch = (term : string) : ActionType => {
     return {

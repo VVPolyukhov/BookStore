@@ -3,7 +3,7 @@ import { Loader } from 'semantic-ui-react'
 
 import './spinner.scss'
 
-const Spinner = () => {
+const Spinner: React.FC = () => {
     return(
         <Loader active
                 inline='centered'
