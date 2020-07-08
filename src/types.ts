@@ -1,3 +1,14 @@
+// Reducer //
+import { BookListReducerType } from './reducers/book-list'
+import { ShoppingCartReducerType } from './reducers/shopping-cart'
+import { FilterReducerType } from './reducers/filter'
+
+export type ReducerType = {
+    bookList: BookListReducerType
+    shoppingCart: ShoppingCartReducerType
+    filter: FilterReducerType
+}
+
 // Actions //
 
 export type ActionType = {

@@ -1,5 +1,4 @@
-import { ReducerType } from ".";
-import { ActionType, CartItemType, BookType } from "../types";
+import { ReducerType, ActionType, CartItemType, BookType } from '../types'
 
 export type ShoppingCartReducerType = {
   cartItems: Array<CartItemType>,
