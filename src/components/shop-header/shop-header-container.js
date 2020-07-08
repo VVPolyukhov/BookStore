@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import ShopHeader from '../components/shop-header'
+import ShopHeader from './shop-header'
 
 const mapStateToProps = ( { shoppingCart: { numItems, orderTotal }} ) => {
     return {

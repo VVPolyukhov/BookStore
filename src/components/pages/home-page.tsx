@@ -1,8 +1,8 @@
 import React from 'react'
 import { Grid } from 'semantic-ui-react'
 
-import { BookListContainer, 
-         SortingBlockContainer } from '../../containers'
+import BookListContainer from '../book-list' 
+import SortingBlockContainer  from '../sorting-block'
 
 const HomePage : React.FC = () => {
     return(

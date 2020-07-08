@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
 import { routes, RouteType } from '../../routes'
-import { ShopHeaderContainer } from '../../containers'
+import ShopHeaderContainer from '../shop-header'
 
 const App : React.FC = () => {
     return (

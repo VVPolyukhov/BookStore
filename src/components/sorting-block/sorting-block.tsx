@@ -2,7 +2,7 @@ import React from 'react'
 import { Grid, Menu, Button } from 'semantic-ui-react'
 import PropTypes from 'prop-types'
 
-import { SearchPanelContainer } from '../../containers'
+import SearchPanelContainer from '../search-panel'
 
 type PropsType = {
     setFilter: (filterBy: string) => void, 

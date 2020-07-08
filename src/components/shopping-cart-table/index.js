@@ -1,3 +1,3 @@
-import ShoppingCartTable from './shopping-cart-table';
+import ShoppingCartTableContainer from './shopping-cart-table-container';
 
-export default ShoppingCartTable;
+export default ShoppingCartTableContainer

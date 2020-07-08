@@ -3,14 +3,14 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import orderBy from 'lodash/orderBy'
 
-import BookList from '../components/book-list'
-import Spinner from '../components/spinner'
-import ErrorIndicator from '../components/error-indicator'
-import { withBookstoreService } from '../components/hoc'
+import BookList from './book-list'
+import Spinner from '../spinner'
+import ErrorIndicator from '../error-indicator'
+import { withBookstoreService } from '../hoc'
 
-import { compose } from '../utils'
+import { compose } from '../../utils'
 
-import { fetchBooks } from '../actions/book-list'
+import { fetchBooks } from '../../actions/book-list'
 
 class BookListContainer extends Component {
 

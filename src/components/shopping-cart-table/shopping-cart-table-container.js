@@ -1,15 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux'
 
-import ShoppingCartTable from '../components/shopping-cart-table'
-import { BackToStore } from '../components/buttons'
+import ShoppingCartTable from './shopping-cart-table'
+import { BackToStore } from '../buttons'
 
 import {
     allBooksRemovedFromCart,
     bookRemovedFromCart,
     bookAddedToCart,
     clearShoppingCart
-} from '../actions/shopping-cart'
+} from '../../actions/shopping-cart'
 
 const ShoppingCartTableContainer = ({ items, total, onIncrease, onDecrease, onDelete, onClearCart }) => {
 

@@ -1,3 +1,3 @@
-import ShopHeader from "./shop-header";
+import ShopHeaderContainer from "./shop-header-container";
 
-export default ShopHeader
+export default ShopHeaderContainer

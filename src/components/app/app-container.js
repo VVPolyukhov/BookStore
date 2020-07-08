@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import App from '../components/app'
+import App from './app'
 
-import { updateShoppingCart } from '../actions/shopping-cart'
-import { setFilter } from '../actions/filter'
-import { setBooks } from '../actions/book-list'
+import { updateShoppingCart } from '../../actions/shopping-cart'
+import { setFilter } from '../../actions/filter'
+import { setBooks } from '../../actions/book-list'
 
 class AppContainer extends Component {
 

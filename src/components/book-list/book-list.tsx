@@ -1,7 +1,7 @@
 import React from 'react'
 import { Grid, Card } from 'semantic-ui-react'
 
-import { BookListItemContainer } from '../../containers'
+import BookListItemContainer from '../book-list-item'
 import { BookType } from '../../types'
 
 type PropsType = {
