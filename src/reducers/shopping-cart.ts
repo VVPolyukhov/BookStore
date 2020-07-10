@@ -6,7 +6,8 @@ export type ShoppingCartReducerType = {
   numItems: number
 }
 
-const updateCartItems = (cartItems: Array<CartItemType>, item: CartItemType, idx: number) : Array<CartItemType> => {
+const updateCartItems = 
+  (cartItems: Array<CartItemType>, item: CartItemType, idx: number) : Array<CartItemType> => {
 
   if (item.count === 0) {
     return [
@@ -49,8 +50,8 @@ export const updateOrder = (state: ReducerType, bookId: number, quantity: number
 
   const { bookList: { books }, shoppingCart: { cartItems }} = state;
 
-  const book : any = books.find(({id}:any) => id === bookId);
-  const itemIndex = cartItems.findIndex(({id}:any) => id === bookId);
+  const book : any = books.find(( {id} : BookType) => id === bookId);
+  const itemIndex = cartItems.findIndex(( {id} : CartItemType) => id === bookId);
   const item = cartItems[itemIndex];
   const newItem = updateCartItem(book, item, quantity)
 
@@ -82,7 +83,8 @@ const updateShoppingCart = (state: ReducerType, action: ActionType): ShoppingCar
       return updateOrder(state, action.payload, -1);
 
     case 'ALL_BOOKS_REMOVED_FROM_CART':
-      const item : any = state.shoppingCart.cartItems.find(({id} : any) => id === action.payload);
+      const item : any = state.shoppingCart.cartItems
+        .find(( {id} : CartItemType) => id === action.payload);
       return updateOrder(state, action.payload, -item.count);
 
     case 'UPDATE_SHOPPING_CART':

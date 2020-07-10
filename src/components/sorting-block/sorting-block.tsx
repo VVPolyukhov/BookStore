@@ -1,11 +1,11 @@
 import React from 'react'
 import { Grid, Menu, Button } from 'semantic-ui-react'
-import PropTypes from 'prop-types'
 
 import SearchPanelContainer from '../search-panel'
+import { ActionType } from '../../types'
 
 type PropsType = {
-    setFilter: (filterBy: string) => void, 
+    setFilter: (filterBy: string) => ActionType, 
     filterBy: string
 }
 
@@ -48,11 +48,6 @@ const SortingBlock: React.FC<PropsType> = ({ setFilter, filterBy }) => {
             }
         </Grid.Column>
     )
-}
-
-SortingBlock.propTypes = {
-    setFilter: PropTypes.func.isRequired,
-    filterBy: PropTypes.string.isRequired
 }
 
 export default SortingBlock

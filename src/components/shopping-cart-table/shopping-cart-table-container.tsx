@@ -10,8 +10,24 @@ import {
     bookAddedToCart,
     clearShoppingCart
 } from '../../actions/shopping-cart'
+import { ReducerType } from '../../types';
 
-const ShoppingCartTableContainer = ({ items, total, onIncrease, onDecrease, onDelete, onClearCart }) => {
+type MapStateToPropsType = {
+    items: Array<any>,
+    total: number
+}
+
+type MapDispatchToPropsType = {
+    onIncrease: any,
+    onDecrease: any,
+    onDelete: any,
+    onClearCart: () => void
+}
+
+type PropsType = MapStateToPropsType & MapDispatchToPropsType
+
+const ShoppingCartTableContainer: React.FC<PropsType> = 
+    ({ items, total, onIncrease, onDecrease, onDelete, onClearCart }) => {
 
     if (items.length === 0)
         return (
@@ -33,18 +49,20 @@ const ShoppingCartTableContainer = ({ items, total, onIncrease, onDecrease, onDe
                               onClearCart={onClearCart}/>
 }
 
-const mapStateToProps = ({ shoppingCart: { cartItems, orderTotal } }) => {
+const mapStateToProps = ({ shoppingCart: { cartItems, orderTotal } }: ReducerType)
+                        : MapStateToPropsType => {
     return {
         items: cartItems,
         total: orderTotal
     }
 }
 
-const mapDispatchToProps = {
+const mapDispatchToProps : MapDispatchToPropsType = {
     onIncrease: bookAddedToCart,
     onDecrease: bookRemovedFromCart,
     onDelete: allBooksRemovedFromCart,
     onClearCart: clearShoppingCart
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ShoppingCartTableContainer)
+export default connect<MapStateToPropsType, MapDispatchToPropsType, {}, ReducerType>
+                (mapStateToProps, mapDispatchToProps)(ShoppingCartTableContainer)

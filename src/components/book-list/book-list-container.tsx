@@ -11,15 +11,28 @@ import { withBookstoreService } from '../hoc'
 import { compose } from '../../utils'
 
 import { fetchBooks } from '../../actions/book-list'
+import { ReducerType, BookType } from '../../types'
 
-class BookListContainer extends Component {
+type MapStateToPropsType = {
+    books: Array<BookType>
+    loading: boolean
+    error: boolean | null
+}
+
+type MapDispatchToPropsType = {
+    fetchBooks: () => void
+}
+
+type PropsType = MapStateToPropsType & MapDispatchToPropsType
+
+class BookListContainer extends Component<PropsType> {
 
     componentDidMount() {
         this.props.fetchBooks()
     }
 
     render() {
-        const { books, loading, error, onAddedToCart } = this.props
+        const { books, loading, error } = this.props
 
         if (loading)
             return <Spinner />
@@ -27,12 +40,11 @@ class BookListContainer extends Component {
         if (error)
             return <ErrorIndicator />
 
-        return <BookList books={books}
-                         onAddedToCart={onAddedToCart} />
+        return <BookList books={books} />
     }
 }
 
-const sortBy = (books, filterBy) => {
+const sortBy = (books : Array<BookType>, filterBy : string) => {
     switch (filterBy) {
         case 'all':
             return books
@@ -51,7 +63,7 @@ const sortBy = (books, filterBy) => {
     }
 }
 
-const searchBooks = (books, term) => {
+const searchBooks = (books : Array<BookType>, term : string) => {
     if (term.length === 0) {
         return books;
     }
@@ -62,7 +74,8 @@ const searchBooks = (books, term) => {
 }
 
 const mapStateToProps = ({ bookList: { books, loading, error }, 
-                           filter:   { term, filterBy } }) => {
+                           filter:   { term, filterBy } } : ReducerType) 
+                        : MapStateToPropsType => {
     return { 
         books: books &&
                 sortBy(
@@ -73,7 +86,8 @@ const mapStateToProps = ({ bookList: { books, loading, error },
     }
 }
 
-const mapDispatchToProps = (dispatch, { bookstoreService }) => {
+const mapDispatchToProps = (dispatch: any, { bookstoreService } : any) 
+                            : MapDispatchToPropsType => {
     return bindActionCreators({
         fetchBooks: fetchBooks(bookstoreService)
     }, dispatch);
@@ -81,5 +95,6 @@ const mapDispatchToProps = (dispatch, { bookstoreService }) => {
 
 export default compose(
     withBookstoreService(),
-    connect(mapStateToProps, mapDispatchToProps)
+    connect<MapStateToPropsType, MapDispatchToPropsType, {}, ReducerType>
+    (mapStateToProps, mapDispatchToProps)
 )(BookListContainer)

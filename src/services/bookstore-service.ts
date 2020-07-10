@@ -5,5 +5,4 @@ export default class BookstoreService {
   getBooks() {
     return axios.get('./books.json')
   }
-
 }

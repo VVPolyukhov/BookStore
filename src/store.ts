@@ -9,7 +9,7 @@ import updateFilter from './reducers/filter'
 
 import { ReducerType, ActionType } from './types'
 
-const reducer: any = (state: ReducerType, action: ActionType): ReducerType => {
+const rootReducer: any = (state: ReducerType, action: ActionType): ReducerType => {
     return {
         bookList: updateBookList(state, action),
         shoppingCart: updateShoppingCart(state, action),
@@ -17,7 +17,7 @@ const reducer: any = (state: ReducerType, action: ActionType): ReducerType => {
     }
 }
 
-const store = createStore(reducer, 
+const store = createStore(rootReducer, 
                           applyMiddleware(
                               thunkMiddleware,
                               stringMiddleware,

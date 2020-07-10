@@ -1,14 +1,14 @@
 import React from 'react'
 
 import './shopping-cart-table-row.scss'
-import { CartItemType } from '../../types'
+import { CartItemType, ActionType } from '../../types'
 
 type PropsType = {
   item: CartItemType, 
   idx: number, 
-  onDecrease: (id : number | undefined) => void, 
-  onIncrease: (id : number | undefined) => void, 
-  onDelete: (id : number | undefined) => void
+  onDecrease: (id : number | undefined) => ActionType, 
+  onIncrease: (id : number | undefined) => ActionType, 
+  onDelete: (id : number | undefined) => ActionType
 }
 
 const ShoppingCartTableRow : React.FC<PropsType> = 

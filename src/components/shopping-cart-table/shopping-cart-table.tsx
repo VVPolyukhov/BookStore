@@ -3,6 +3,7 @@ import { BackToStore } from '../buttons'
 import ShoppingCartTableRow from '../shopping-cart-table-row'
 
 import './shopping-cart-table.scss'
+import { ActionType } from '../../types'
 
 type CartItemType = {
   id: number,
@@ -14,9 +15,9 @@ type CartItemType = {
 type PropsType = {
   items: Array<CartItemType>, 
   total: number, 
-  onIncrease: () => void, 
-  onDecrease: () => void, 
-  onDelete: () => void, 
+  onIncrease: () => ActionType, 
+  onDecrease: () => ActionType, 
+  onDelete: () => ActionType, 
   onClearCart: () => void
 }
 

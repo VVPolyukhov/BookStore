@@ -1,7 +1,11 @@
 import React, { Component } from "react"
 import ErrorIndicator from '../error-indicator'
 
-export default class ErrorBoundry extends Component {
+type StateType = {
+    hasError: boolean
+} 
+
+export default class ErrorBoundry extends Component<{}, StateType> {
     
     state = {
         hasError: false

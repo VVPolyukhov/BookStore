@@ -3,11 +3,11 @@ import { Card, Icon, Image, Button, Rating } from 'semantic-ui-react'
 
 import './book-list-item.scss'
 
-import { BookType, CartItemType } from '../../types'
+import { BookType, CartItemType, ActionType } from '../../types'
 
 type PropType = {
     book : BookType, 
-    onAddedToCart: (id : number) => void, 
+    onAddedToCart: (id : number) => ActionType, 
     particularBook: CartItemType
 }
 
