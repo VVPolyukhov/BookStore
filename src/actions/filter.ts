@@ -1,13 +1,19 @@
-import { ActionType } from "../types"
-
-export const booksSearch = (term : string) : ActionType => {
+export type BooksSearchActionType = {
+    type: string,
+    payload: string
+}
+export const booksSearch = (term : string) : BooksSearchActionType => {
     return {
         type: 'BOOKS_SEARCH',
         payload: term
     }
 }
 
-export const setFilter = (filterBy : string) : ActionType => {
+export type SetFilterActionType = {
+    type: string,
+    payload: string
+}
+export const setFilter = (filterBy : string) : SetFilterActionType => {
     return {
         type: 'SET_FILTER',
         payload: filterBy

@@ -2,15 +2,15 @@ import { connect } from 'react-redux'
 
 import BookListItem from './book-list-item'
 
-import { bookAddedToCart } from '../../actions/shopping-cart'
-import { ReducerType, BookType, ActionType } from '../../types'
+import { bookAddedToCart, BookAddedToCartActionType } from '../../actions/shopping-cart'
+import { ReducerType, BookType } from '../../types'
 
 type MapStateToPropsType = {
     particularBook: any
 }
 
 type MapDispatchToPropsType = {
-    onAddedToCart: (bookId: number) => ActionType
+    onAddedToCart: (bookId: number) => BookAddedToCartActionType
 }
 
 type OwnPropsType = {

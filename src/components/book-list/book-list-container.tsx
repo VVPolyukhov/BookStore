@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { bindActionCreators } from 'redux'
+import { bindActionCreators, Dispatch } from 'redux'
 import { connect } from 'react-redux'
 import orderBy from 'lodash/orderBy'
 
@@ -86,7 +86,7 @@ const mapStateToProps = ({ bookList: { books, loading, error },
     }
 }
 
-const mapDispatchToProps = (dispatch: any, { bookstoreService } : any) 
+const mapDispatchToProps = (dispatch: Dispatch, { bookstoreService } : any) 
                             : MapDispatchToPropsType => {
     return bindActionCreators({
         fetchBooks: fetchBooks(bookstoreService)

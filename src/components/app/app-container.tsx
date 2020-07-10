@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import { bindActionCreators, Dispatch } from 'redux'
 
 import App from './app'
 
-import { updateShoppingCart } from '../../actions/shopping-cart'
-import { setFilter } from '../../actions/filter'
-import { setBooks } from '../../actions/book-list'
-import { CartItemType, BookType, ReducerType, ActionType } from '../../types'
+import { updateShoppingCart, UpdateShoppingCartActionType } from '../../actions/shopping-cart'
+import { setFilter, SetFilterActionType } from '../../actions/filter'
+import { setBooks, SetBooksActionType } from '../../actions/book-list'
+import { CartItemType, BookType, ReducerType } from '../../types'
 
 type MapStateToPropsType = {
     cartItems: Array<CartItemType>
@@ -20,9 +20,9 @@ type MapStateToPropsType = {
 type MapDispatchToPropsType = {
     updateShoppingCart:
         (cartItems: Array<CartItemType>, orderTotal: number, numItems: number)
-        => ActionType
-    setFilter: (filterBy: string) => ActionType
-    setBooks: (books: Array<BookType>) => ActionType
+        => UpdateShoppingCartActionType
+    setFilter: (filterBy: string) => SetFilterActionType
+    setBooks: (books: Array<BookType>) => SetBooksActionType
 }
 
 type PropsType = MapStateToPropsType & MapDispatchToPropsType
@@ -70,7 +70,7 @@ const mapStateToProps = ({ shoppingCart: { cartItems, orderTotal, numItems },
     return { cartItems, orderTotal, numItems, filterBy, books }
 }
 
-const mapDispatchToProps = (dispatch: any) : MapDispatchToPropsType => {
+const mapDispatchToProps = (dispatch: Dispatch) : MapDispatchToPropsType => {
     return bindActionCreators({
         updateShoppingCart,
         setFilter,

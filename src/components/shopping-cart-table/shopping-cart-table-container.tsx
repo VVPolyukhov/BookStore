@@ -8,7 +8,8 @@ import {
     allBooksRemovedFromCart,
     bookRemovedFromCart,
     bookAddedToCart,
-    clearShoppingCart
+    clearShoppingCart,
+    ClearShoppingCartActionType
 } from '../../actions/shopping-cart'
 import { ReducerType } from '../../types';
 
@@ -21,7 +22,7 @@ type MapDispatchToPropsType = {
     onIncrease: any,
     onDecrease: any,
     onDelete: any,
-    onClearCart: () => void
+    onClearCart: () => ClearShoppingCartActionType
 }
 
 type PropsType = MapStateToPropsType & MapDispatchToPropsType

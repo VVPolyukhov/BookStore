@@ -2,15 +2,15 @@ import { connect } from 'react-redux'
 
 import SortingBlock from './sorting-block'
 
-import { setFilter } from '../../actions/filter'
-import { ReducerType, ActionType } from '../../types'
+import { setFilter, SetFilterActionType } from '../../actions/filter'
+import { ReducerType } from '../../types'
 
 type MapStateToPropsType = {
     filterBy: string
 }
 
 type MapDispatchToPropsType = {
-    setFilter: (filterBy: string) => ActionType
+    setFilter: (filterBy: string) => SetFilterActionType
 }
 
 const mapStateToProps = ({ filter: { filterBy } }: ReducerType): MapStateToPropsType => {
