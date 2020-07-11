@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 import { bindActionCreators, Dispatch } from 'redux'
 import { connect } from 'react-redux'
 import orderBy from 'lodash/orderBy'
@@ -25,23 +25,20 @@ type MapDispatchToPropsType = {
 
 type PropsType = MapStateToPropsType & MapDispatchToPropsType
 
-class BookListContainer extends Component<PropsType> {
+const BookListContainer: React.FC<PropsType> = 
+    ({ books, loading, error, fetchBooks }) => {
 
-    componentDidMount() {
-        this.props.fetchBooks()
-    }
+    useEffect(() => {
+        fetchBooks()
+    }, [fetchBooks])
 
-    render() {
-        const { books, loading, error } = this.props
+    if (loading)
+        return <Spinner />
 
-        if (loading)
-            return <Spinner />
+    if (error)
+        return <ErrorIndicator />
 
-        if (error)
-            return <ErrorIndicator />
-
-        return <BookList books={books} />
-    }
+    return <BookList books={books} />
 }
 
 const sortBy = (books : Array<BookType>, filterBy : string) => {

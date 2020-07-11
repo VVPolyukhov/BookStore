@@ -9,6 +9,7 @@ Demo - https://vvpolyukhov.github.io/BookStore/
 * JavaScript ES6+
 * TypeScript
 * React
+* React Hooks
 * React Router
 * Redux
 * Redux Thunk

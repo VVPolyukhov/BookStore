@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useEffect, useRef, MutableRefObject } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators, Dispatch } from 'redux'
 
@@ -27,41 +27,41 @@ type MapDispatchToPropsType = {
 
 type PropsType = MapStateToPropsType & MapDispatchToPropsType
 
-class AppContainer extends Component<PropsType> {
+const AppContainer: React.FC<PropsType> = (props) => {
 
-    saveToLocalStorage = () => {
-        localStorage.setItem('cartItems', JSON.stringify(this.props.cartItems))
-        localStorage.setItem('orderTotal', JSON.stringify(this.props.orderTotal))
-        localStorage.setItem('numItems', JSON.stringify(this.props.numItems))
-        localStorage.setItem('filterBy', JSON.stringify(this.props.filterBy))
-        localStorage.setItem('books', JSON.stringify(this.props.books))
+    const saveToLocalStorage = () => {
+        localStorage.setItem('cartItems', JSON.stringify(props.cartItems))
+        localStorage.setItem('orderTotal', JSON.stringify(props.orderTotal))
+        localStorage.setItem('numItems', JSON.stringify(props.numItems))
+        localStorage.setItem('filterBy', JSON.stringify(props.filterBy))
+        localStorage.setItem('books', JSON.stringify(props.books))
     }
 
-    getFromLocalStorage = () => {
+    const getFromLocalStorage = () => {
         if (JSON.parse(localStorage.getItem('cartItems')!) !== null)
-            this.props.updateShoppingCart(
+            props.updateShoppingCart(
                 JSON.parse(localStorage.getItem('cartItems')!),
                 JSON.parse(localStorage.getItem('orderTotal')!),
                 JSON.parse(localStorage.getItem('numItems')!)
             ) 
         if (JSON.parse(localStorage.getItem('filterBy')!) !== 'all')
-            this.props.setFilter(
+            props.setFilter(
                 JSON.parse(localStorage.getItem('filterBy')!)
             )
-        this.props.setBooks(JSON.parse(localStorage.getItem('books')!))             
+        props.setBooks(JSON.parse(localStorage.getItem('books')!))             
     }
 
-    componentDidMount() {
-        this.getFromLocalStorage()
-    }
+    const isMounted: MutableRefObject<boolean | undefined> = useRef();
+    useEffect(() => {
+        if (!isMounted.current) {
+            getFromLocalStorage()
+            isMounted.current = true;
+        } else {
+            saveToLocalStorage()
+        }
+    });
 
-    componentDidUpdate() {
-        this.saveToLocalStorage()
-    }
-
-    render() {
-        return <App />
-    }
+    return <App />
 }
 
 const mapStateToProps = ({ shoppingCart: { cartItems, orderTotal, numItems },
