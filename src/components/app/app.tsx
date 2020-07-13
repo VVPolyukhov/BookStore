@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-import { routes, RouteType } from '../../routes'
+import { routes, IRoute } from '../../routes'
 import ShopHeaderContainer from '../shop-header'
 
 const App : React.FC = () => {
@@ -12,7 +12,7 @@ const App : React.FC = () => {
 
             <Switch>
                 {
-                    routes.map((route : RouteType) => {
+                    routes.map((route : IRoute) => {
                         return (
                             <Route
                                 key={route.path}

@@ -13,13 +13,13 @@ import { compose } from '../../utils'
 import { fetchBooks } from '../../actions/book-list'
 import { ReducerType, BookType } from '../../types'
 
-type MapStateToPropsType = {
+interface MapStateToPropsType {
     books: Array<BookType>
     loading: boolean
     error: boolean | null
 }
 
-type MapDispatchToPropsType = {
+interface MapDispatchToPropsType {
     fetchBooks: () => void
 }
 

@@ -5,15 +5,15 @@ import BookListItem from './book-list-item'
 import { bookAddedToCart, BookAddedToCartActionType } from '../../actions/shopping-cart'
 import { ReducerType, BookType } from '../../types'
 
-type MapStateToPropsType = {
+interface MapStateToPropsType {
     particularBook: any
 }
 
-type MapDispatchToPropsType = {
+interface MapDispatchToPropsType {
     onAddedToCart: (bookId: number) => BookAddedToCartActionType
 }
 
-type OwnPropsType = {
+interface OwnPropsType {
     book: BookType
     key: number  
 }

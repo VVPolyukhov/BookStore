@@ -1,6 +1,6 @@
 import { ReducerType, ActionType, CartItemType, BookType } from '../types'
 
-export type ShoppingCartReducerType = {
+export interface ShoppingCartReducerType {
   cartItems: Array<CartItemType>,
   orderTotal: number,
   numItems: number

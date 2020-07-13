@@ -1,6 +1,6 @@
 import { ReducerType, ActionType, BookType } from '../types'
 
-export type BookListReducerType = {
+export interface BookListReducerType {
   books: Array<BookType>,
   loading: boolean,
   error: boolean | null

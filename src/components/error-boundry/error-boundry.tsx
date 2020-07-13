@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import ErrorIndicator from '../error-indicator'
 
-type StateType = {
+interface StateType {
     hasError: boolean
 } 
 

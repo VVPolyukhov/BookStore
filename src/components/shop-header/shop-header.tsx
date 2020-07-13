@@ -4,7 +4,7 @@ import { Button, Icon } from 'semantic-ui-react'
 
 import './shop-header.scss'
 
-type PropsType = {
+interface PropsType {
     numItems: number,
     orderTotal: number
 }

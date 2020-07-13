@@ -3,7 +3,7 @@ import React from 'react'
 import './shopping-cart-table-row.scss'
 import { CartItemType, ActionType } from '../../types'
 
-type PropsType = {
+interface PropsType {
   item: CartItemType, 
   idx: number, 
   onDecrease: (id : number | undefined) => ActionType, 

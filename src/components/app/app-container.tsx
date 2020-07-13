@@ -9,7 +9,7 @@ import { setFilter, SetFilterActionType } from '../../actions/filter'
 import { setBooks, SetBooksActionType } from '../../actions/book-list'
 import { CartItemType, BookType, ReducerType } from '../../types'
 
-type MapStateToPropsType = {
+interface MapStateToPropsType {
     cartItems: Array<CartItemType>
     orderTotal: number
     numItems: number
@@ -17,7 +17,7 @@ type MapStateToPropsType = {
     books: Array<BookType>
 }
 
-type MapDispatchToPropsType = {
+interface MapDispatchToPropsType {
     updateShoppingCart:
         (cartItems: Array<CartItemType>, orderTotal: number, numItems: number)
         => UpdateShoppingCartActionType

@@ -4,11 +4,11 @@ import SearchPanel from './search-panel'
 import { booksSearch, BooksSearchActionType } from '../../actions/filter';
 import { ReducerType } from '../../types'
 
-type MapStateToPropsType = {
+interface MapStateToPropsType {
     term: string
 }
 
-type MapDispatchToPropsType = {
+interface MapDispatchToPropsType {
     onSearch: (term: string) => BooksSearchActionType
 }
 

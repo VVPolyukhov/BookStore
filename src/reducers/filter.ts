@@ -1,6 +1,6 @@
 import { ReducerType, ActionType } from '../types'
 
-export type FilterReducerType = {
+export interface FilterReducerType {
   term: string,
   filterBy: string
 }

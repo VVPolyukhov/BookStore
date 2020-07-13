@@ -5,14 +5,14 @@ import ShoppingCartTableRow from '../shopping-cart-table-row'
 import './shopping-cart-table.scss'
 import { ActionType } from '../../types'
 
-type CartItemType = {
+interface CartItemType {
   id: number,
   count: number,
   title: string,
   total: number
 }
 
-type PropsType = {
+interface PropsType {
   items: Array<CartItemType>, 
   total: number, 
   onIncrease: () => ActionType, 

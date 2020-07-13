@@ -1,7 +1,7 @@
 import { BookType, ErrorType, ReducerType } from "../types"
 import { ThunkAction } from "redux-thunk"
 
-type BooksRequestedActionType = {
+interface BooksRequestedActionType {
     type: string
 }
 const booksRequested = () : BooksRequestedActionType => {
@@ -10,7 +10,7 @@ const booksRequested = () : BooksRequestedActionType => {
     }
 }
 
-type BooksLoadedActionType = {
+interface BooksLoadedActionType {
     type: string,
     payload: Array<BookType>
 }
@@ -21,7 +21,7 @@ const booksLoaded = (newBooks: Array<BookType>) : BooksLoadedActionType => {
     }
 }
 
-type BooksErrorActionType = {
+interface BooksErrorActionType {
     type: string,
     payload: ErrorType
 }
@@ -32,7 +32,7 @@ const booksError = (error : ErrorType) : BooksErrorActionType => {
     }
 }
 
-export type SetBooksActionType = {
+export interface SetBooksActionType {
     type: string,
     payload: Array<BookType>
 }

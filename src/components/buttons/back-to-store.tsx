@@ -4,7 +4,7 @@ import { History } from 'history';
 
 interface ChildComponentProps {
     history : History
-  }
+}
 
 const BackToStore: React.FC<ChildComponentProps> = ( { history } ) => {
     return (

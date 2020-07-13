@@ -4,7 +4,7 @@ import {
     NotFoundPage
 } from './components/pages'
 
-export type RouteType = {
+export interface IRoute {
     path: string,
     isExact: boolean,
     component: React.FC

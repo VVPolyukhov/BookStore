@@ -4,7 +4,7 @@ import { Grid, Menu, Button } from 'semantic-ui-react'
 import SearchPanelContainer from '../search-panel'
 import { ActionType } from '../../types'
 
-type PropsType = {
+interface PropsType {
     setFilter: (filterBy: string) => ActionType, 
     filterBy: string
 }

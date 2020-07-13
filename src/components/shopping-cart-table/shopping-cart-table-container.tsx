@@ -13,12 +13,12 @@ import {
 } from '../../actions/shopping-cart'
 import { ReducerType } from '../../types';
 
-type MapStateToPropsType = {
+interface MapStateToPropsType {
     items: Array<any>,
     total: number
 }
 
-type MapDispatchToPropsType = {
+interface MapDispatchToPropsType {
     onIncrease: any,
     onDecrease: any,
     onDelete: any,

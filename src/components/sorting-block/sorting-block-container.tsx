@@ -5,11 +5,11 @@ import SortingBlock from './sorting-block'
 import { setFilter, SetFilterActionType } from '../../actions/filter'
 import { ReducerType } from '../../types'
 
-type MapStateToPropsType = {
+interface MapStateToPropsType {
     filterBy: string
 }
 
-type MapDispatchToPropsType = {
+interface MapDispatchToPropsType {
     setFilter: (filterBy: string) => SetFilterActionType
 }
 

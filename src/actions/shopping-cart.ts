@@ -1,6 +1,6 @@
 import { CartItemType } from "../types"
 
-export type BookAddedToCartActionType = {
+export interface BookAddedToCartActionType {
     type: string,
     payload: number
 }
@@ -11,7 +11,7 @@ export const bookAddedToCart = (bookId : number) : BookAddedToCartActionType => 
     }
 }
 
-export type AllBooksRemovedFromCartActionType = {
+export interface AllBooksRemovedFromCartActionType {
     type: string,
     payload: number
 }
@@ -22,7 +22,7 @@ export const allBooksRemovedFromCart = (bookId : number) : AllBooksRemovedFromCa
     }
 }
 
-export type BookRemovedFromCartActionType = {
+export interface BookRemovedFromCartActionType {
     type: string,
     payload: number
 }
@@ -33,8 +33,8 @@ export const bookRemovedFromCart = (bookId : number) : BookRemovedFromCartAction
     }
 }
 
-export type UpdateShoppingCartActionType = {
-    type: 'UPDATE_SHOPPING_CART',
+export interface UpdateShoppingCartActionType {
+    type: string,
     payload: {
         cartItems: Array<CartItemType>,
         orderTotal : number,
@@ -55,7 +55,7 @@ export const updateShoppingCart =
     }
 }
 
-export type ClearShoppingCartActionType = {
+export interface ClearShoppingCartActionType {
     type: string
 }
 export const clearShoppingCart = () : ClearShoppingCartActionType => {

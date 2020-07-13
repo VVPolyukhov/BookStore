@@ -5,7 +5,7 @@ import './book-list-item.scss'
 
 import { BookType, CartItemType, ActionType } from '../../types'
 
-type PropType = {
+interface PropType {
     book : BookType, 
     onAddedToCart: (id : number) => ActionType, 
     particularBook: CartItemType

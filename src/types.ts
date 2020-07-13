@@ -3,7 +3,7 @@ import { BookListReducerType } from './reducers/book-list'
 import { ShoppingCartReducerType } from './reducers/shopping-cart'
 import { FilterReducerType } from './reducers/filter'
 
-export type ReducerType = {
+export interface ReducerType {
     bookList: BookListReducerType,
     shoppingCart: ShoppingCartReducerType,
     filter: FilterReducerType
@@ -11,14 +11,14 @@ export type ReducerType = {
 
 // Actions //
 
-export type ActionType = {
+export interface ActionType {
     type: string,
     payload?: any
 }
 
 // Data //
 
-export type BookType = {
+export interface BookType {
     id: number,
     title: string,
     author: string,
@@ -29,7 +29,7 @@ export type BookType = {
 
 export type ErrorType = string | boolean
 
-export type CartItemType = {
+export interface CartItemType {
     id?: number,
     count?: number,
     title?: string,

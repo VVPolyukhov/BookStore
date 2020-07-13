@@ -1,4 +1,4 @@
-export type BooksSearchActionType = {
+export interface BooksSearchActionType {
     type: string,
     payload: string
 }
@@ -9,7 +9,7 @@ export const booksSearch = (term : string) : BooksSearchActionType => {
     }
 }
 
-export type SetFilterActionType = {
+export interface SetFilterActionType {
     type: string,
     payload: string
 }

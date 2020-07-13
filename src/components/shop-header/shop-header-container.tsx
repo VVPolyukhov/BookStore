@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import ShopHeader from './shop-header'
 import { ReducerType } from '../../types' 
 
-type MapStateToPropsType = {
+interface MapStateToPropsType {
     numItems: number
     orderTotal: number
 }
