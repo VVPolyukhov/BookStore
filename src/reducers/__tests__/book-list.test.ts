@@ -1,6 +1,7 @@
-import updateBookList from '../book-list'
+import updateBookList, { BookListReducerType } from '../book-list'
 
 import { setBooks } from '../../actions/book-list'
+import { ReducerType, BookType } from '../../types'
 
 describe('updateBookList function:', () => {
 
@@ -14,15 +15,24 @@ describe('updateBookList function:', () => {
 
     test('should set books', () => {
 
-        const state = {
+        const state: ReducerType = {
             bookList: {
                 books: [],
                 loading: false,
                 error: false
+            },
+            filter: {
+                term: '',
+                filterBy: ''
+            },
+            shoppingCart: {
+                cartItems: [], 
+                orderTotal: 0, 
+                numItems: 0
             }
         };
 
-        const books = [
+        const books: Array<BookType> = [
             {
                 id: 1,
                 title: "Земное притяжение",
@@ -41,7 +51,7 @@ describe('updateBookList function:', () => {
             }
         ]
 
-        const result = {
+        const result: BookListReducerType = {
             ...state.bookList,
             books
         };

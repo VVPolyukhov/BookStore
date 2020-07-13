@@ -2,6 +2,7 @@ import { bookAddedToCart,
          updateShoppingCart,
          clearShoppingCart } from '../shopping-cart'
 import { CommentAction } from 'semantic-ui-react'
+import { CartItemType } from '../../types'
 
 describe('Shopping-Cart Actions:', () => {
 
@@ -41,7 +42,7 @@ describe('Shopping-Cart Actions:', () => {
         const cartItems = [
             {
                 id: 1,
-                title: 'Book 1',
+                title: 'Book',
                 price: 200,
                 count: 1
             }

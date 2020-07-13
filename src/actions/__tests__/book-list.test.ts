@@ -1,6 +1,7 @@
 import {
     setBooks
 } from '../book-list'
+import { BookType } from '../../types'
 
 describe('Book-List Actions:', () => {
 
@@ -17,10 +18,14 @@ describe('Book-List Actions:', () => {
     })
 
     test('setBooks', () => {
-        const books = [
+        const books: Array<BookType> = [
             {
                 id: 1,
-                title: 'Book 1'
+                title: 'Book',
+                author: 'Author',
+                image: 'url',
+                price: 228,
+                rating: 5
             }
         ]
         expect(setBooks(books)).toEqual({

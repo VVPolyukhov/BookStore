@@ -1,12 +1,13 @@
-import updateShoppingCart from '../shopping-cart'
+import updateShoppingCart, { ShoppingCartReducerType } from '../shopping-cart'
 
 import { bookAddedToCart, 
          bookRemovedFromCart, 
          allBooksRemovedFromCart } from '../../actions/shopping-cart'
+import { ReducerType } from '../../types'
 
 describe('updateShoppingCart function:', () => {
 
-    let state
+    let state: ReducerType
 
     beforeEach(() => {
         state = {
@@ -20,7 +21,18 @@ describe('updateShoppingCart function:', () => {
                         price: 317,
                         rating: 1
                     }
-                ]
+                ],
+                loading: false,
+                error: false
+            },
+            filter: {
+                term: '',
+                filterBy: ''
+            },
+            shoppingCart: {
+                cartItems: [], 
+                orderTotal: 0, 
+                numItems: 0
             }
         }
     })
@@ -42,7 +54,7 @@ describe('updateShoppingCart function:', () => {
         }
 
 
-        const result = {
+        const result: ShoppingCartReducerType = {
             cartItems: [
                 {
                     id: 1,
@@ -73,7 +85,7 @@ describe('updateShoppingCart function:', () => {
             numItems: 1
         }
 
-        const result = {
+        const result: ShoppingCartReducerType = {
             cartItems: [],
             orderTotal: 0,
             numItems: 0
@@ -98,7 +110,7 @@ describe('updateShoppingCart function:', () => {
         }
 
 
-        const result = {
+        const result: ShoppingCartReducerType = {
             cartItems: [],
             orderTotal: 0,
             numItems: 0

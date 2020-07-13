@@ -1,16 +1,27 @@
 import updateFilter from '../filter'
 
 import { setFilter, booksSearch } from '../../actions/filter'
+import { ReducerType } from '../../types'
 
 describe('updateFilter function:', () => {
 
-    let state
+    let state: ReducerType
 
     beforeEach(() => {
         state = {
+            bookList: {
+                books: [],
+                loading: false,
+                error: false
+            },
             filter: {
                 term: '',
                 filterBy: 'all'
+            },
+            shoppingCart: {
+                cartItems: [], 
+                orderTotal: 0, 
+                numItems: 0
             }
         };
     })
