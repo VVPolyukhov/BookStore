@@ -5,8 +5,8 @@ import {
 } from './components/pages'
 
 export type RouteType = {
-    path: string
-    isExact: boolean
+    path: string,
+    isExact: boolean,
     component: React.FC
 }
 

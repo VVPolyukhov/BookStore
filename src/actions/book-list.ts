@@ -22,7 +22,7 @@ const booksLoaded = (newBooks: Array<BookType>) : BooksLoadedActionType => {
 }
 
 type BooksErrorActionType = {
-    type: 'FETCH_BOOKS_FAILURE',
+    type: string,
     payload: ErrorType
 }
 const booksError = (error : ErrorType) : BooksErrorActionType => {
@@ -33,7 +33,7 @@ const booksError = (error : ErrorType) : BooksErrorActionType => {
 }
 
 export type SetBooksActionType = {
-    type: string
+    type: string,
     payload: Array<BookType>
 }
 export const setBooks = (books : Array<BookType>) : SetBooksActionType => {

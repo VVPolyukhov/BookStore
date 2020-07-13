@@ -4,8 +4,8 @@ import { ShoppingCartReducerType } from './reducers/shopping-cart'
 import { FilterReducerType } from './reducers/filter'
 
 export type ReducerType = {
-    bookList: BookListReducerType
-    shoppingCart: ShoppingCartReducerType
+    bookList: BookListReducerType,
+    shoppingCart: ShoppingCartReducerType,
     filter: FilterReducerType
 }
 
@@ -19,11 +19,11 @@ export type ActionType = {
 // Data //
 
 export type BookType = {
-    id: number
-    title: string
-    author: string
-    image: string
-    price: number
+    id: number,
+    title: string,
+    author: string,
+    image: string,
+    price: number,
     rating: number
 }
 

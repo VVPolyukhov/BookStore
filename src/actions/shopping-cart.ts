@@ -1,7 +1,7 @@
 import { CartItemType } from "../types"
 
 export type BookAddedToCartActionType = {
-    type: string
+    type: string,
     payload: number
 }
 export const bookAddedToCart = (bookId : number) : BookAddedToCartActionType => {
@@ -12,7 +12,7 @@ export const bookAddedToCart = (bookId : number) : BookAddedToCartActionType => 
 }
 
 export type AllBooksRemovedFromCartActionType = {
-    type: string
+    type: string,
     payload: number
 }
 export const allBooksRemovedFromCart = (bookId : number) : AllBooksRemovedFromCartActionType => {
@@ -23,7 +23,7 @@ export const allBooksRemovedFromCart = (bookId : number) : AllBooksRemovedFromCa
 }
 
 export type BookRemovedFromCartActionType = {
-    type: string
+    type: string,
     payload: number
 }
 export const bookRemovedFromCart = (bookId : number) : BookRemovedFromCartActionType => {
@@ -36,8 +36,8 @@ export const bookRemovedFromCart = (bookId : number) : BookRemovedFromCartAction
 export type UpdateShoppingCartActionType = {
     type: 'UPDATE_SHOPPING_CART',
     payload: {
-        cartItems: Array<CartItemType>
-        orderTotal : number 
+        cartItems: Array<CartItemType>,
+        orderTotal : number,
         numItems : number
     }
 }
