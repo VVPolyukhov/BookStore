@@ -4,7 +4,7 @@ import { Menu, Input } from 'semantic-ui-react'
 import './search-panel.scss';
 
 interface PropsType {
-    term: string
+    term: string,
     onSearch: (bookName : string) => void
 }
 
