@@ -1,7 +1,8 @@
 import { createStore, applyMiddleware } from 'redux'
 import thunkMiddleware from 'redux-thunk'
+import { createLogger } from 'redux-logger'
 
-import { stringMiddleware, loggerMiddleware } from './middlewares'
+import { stringMiddleware } from './middlewares'
 
 import updateBookList from './reducers/book-list'
 import updateShoppingCart from './reducers/shopping-cart'
@@ -17,11 +18,12 @@ const rootReducer: any = (state: ReducerType, action: ActionType): ReducerType =
     }
 }
 
+const middlewares: any = [thunkMiddleware, stringMiddleware]
+if (process.env.NODE_ENV !== 'production') {
+    middlewares.push(createLogger())
+}
+
 const store = createStore(rootReducer, 
-                          applyMiddleware(
-                              thunkMiddleware,
-                              stringMiddleware,
-                              loggerMiddleware
-                          ))
+                          applyMiddleware(...middlewares))
 
 export default store

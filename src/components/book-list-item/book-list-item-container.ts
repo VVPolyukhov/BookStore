@@ -14,7 +14,7 @@ interface MapDispatchToPropsType {
 }
 
 interface OwnPropsType {
-    book: BookType
+    book: BookType,
     key: number  
 }
 

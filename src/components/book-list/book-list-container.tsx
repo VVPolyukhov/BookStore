@@ -14,8 +14,8 @@ import { fetchBooks } from '../../actions/book-list'
 import { ReducerType, BookType } from '../../types'
 
 interface MapStateToPropsType {
-    books: Array<BookType>
-    loading: boolean
+    books: Array<BookType>,
+    loading: boolean,
     error: boolean | null
 }
 

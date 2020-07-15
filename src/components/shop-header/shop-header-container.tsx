@@ -4,7 +4,7 @@ import ShopHeader from './shop-header'
 import { ReducerType } from '../../types' 
 
 interface MapStateToPropsType {
-    numItems: number
+    numItems: number,
     orderTotal: number
 }
 
