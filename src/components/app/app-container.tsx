@@ -4,9 +4,9 @@ import { bindActionCreators, Dispatch } from 'redux'
 
 import App from './app'
 
-import { updateShoppingCart, UpdateShoppingCartActionType } from '../../actions/shopping-cart'
-import { setFilter, SetFilterActionType } from '../../actions/filter'
-import { setBooks, SetBooksActionType } from '../../actions/book-list'
+import { updateShoppingCart, UpdateShoppingCartActionType } from '../../redux/actions/shopping-cart'
+import { setFilter, SetFilterActionType } from '../../redux/actions/filter'
+import { setBooks, SetBooksActionType } from '../../redux/actions/book-list'
 import { CartItemType, BookType, ReducerType } from '../../types'
 
 interface MapStateToPropsType {

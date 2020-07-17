@@ -1,4 +1,4 @@
-import { ReducerType, ActionType } from '../types'
+import { ReducerType, ActionType } from '../../types'
 
 export interface FilterReducerType {
   term: string,

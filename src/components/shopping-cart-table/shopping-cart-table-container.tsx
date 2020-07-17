@@ -10,7 +10,7 @@ import {
     bookAddedToCart,
     clearShoppingCart,
     ClearShoppingCartActionType
-} from '../../actions/shopping-cart'
+} from '../../redux/actions/shopping-cart'
 import { ReducerType } from '../../types';
 
 interface MapStateToPropsType {

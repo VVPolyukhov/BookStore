@@ -10,7 +10,7 @@ import { withBookstoreService } from '../hoc'
 
 import { compose } from '../../utils'
 
-import { fetchBooks } from '../../actions/book-list'
+import { fetchBooks } from '../../redux/actions/book-list'
 import { ReducerType, BookType } from '../../types'
 
 interface MapStateToPropsType {

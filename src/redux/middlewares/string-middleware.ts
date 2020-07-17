@@ -1,4 +1,4 @@
-import { ActionType } from "../types"
+import { ActionType } from "../../types"
 
 export const stringMiddleware = () => (next: any) => (action: ActionType) => {
     if (typeof action === 'string')

@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 
 import SortingBlock from './sorting-block'
 
-import { setFilter, SetFilterActionType } from '../../actions/filter'
+import { setFilter, SetFilterActionType } from '../../redux/actions/filter'
 import { ReducerType } from '../../types'
 
 interface MapStateToPropsType {

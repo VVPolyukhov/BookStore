@@ -1,4 +1,4 @@
-import { CartItemType } from "../types"
+import { CartItemType } from "../../types"
 
 export interface BookAddedToCartActionType {
     type: string,

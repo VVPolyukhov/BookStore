@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import SearchPanel from './search-panel'
-import { booksSearch, BooksSearchActionType } from '../../actions/filter';
+import { booksSearch, BooksSearchActionType } from '../../redux/actions/filter';
 import { ReducerType } from '../../types'
 
 interface MapStateToPropsType {

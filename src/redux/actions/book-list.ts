@@ -1,6 +1,6 @@
-import { BookType, ErrorType, ReducerType } from "../types"
+import { BookType, ErrorType, ReducerType } from "../../types"
 import { ThunkAction } from "redux-thunk"
-import BookstoreService from "../services/bookstore-service"
+import BookstoreService from "../../services/bookstore-service"
 
 interface BooksRequestedActionType {
     type: string

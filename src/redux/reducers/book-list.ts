@@ -1,4 +1,4 @@
-import { ReducerType, ActionType, BookType } from '../types'
+import { ReducerType, ActionType, BookType } from '../../types'
 
 export interface BookListReducerType {
   books: Array<BookType>,

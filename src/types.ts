@@ -1,7 +1,7 @@
 // Reducer //
-import { BookListReducerType } from './reducers/book-list'
-import { ShoppingCartReducerType } from './reducers/shopping-cart'
-import { FilterReducerType } from './reducers/filter'
+import { BookListReducerType } from './redux/reducers/book-list'
+import { ShoppingCartReducerType } from './redux/reducers/shopping-cart'
+import { FilterReducerType } from './redux/reducers/filter'
 
 export interface ReducerType {
     bookList: BookListReducerType,

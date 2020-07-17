@@ -8,7 +8,7 @@ import updateBookList from './reducers/book-list'
 import updateShoppingCart from './reducers/shopping-cart'
 import updateFilter from './reducers/filter'
 
-import { ReducerType, ActionType } from './types'
+import { ReducerType, ActionType } from '../types'
 
 const rootReducer: any = (state: ReducerType, action: ActionType): ReducerType => {
     return {
