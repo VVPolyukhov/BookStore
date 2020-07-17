@@ -1,7 +1,7 @@
 import updateBookList, { BookListReducerType } from '../book-list'
 
 import { setBooks } from '../../actions/book-list'
-import { ReducerType, BookType } from '../../types'
+import { ReducerType, BookType } from '../../../types'
 
 describe('updateBookList function:', () => {
 

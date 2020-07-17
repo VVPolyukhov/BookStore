@@ -3,7 +3,7 @@ import updateShoppingCart, { ShoppingCartReducerType } from '../shopping-cart'
 import { bookAddedToCart, 
          bookRemovedFromCart, 
          allBooksRemovedFromCart } from '../../actions/shopping-cart'
-import { ReducerType } from '../../types'
+import { ReducerType } from '../../../types'
 
 describe('updateShoppingCart function:', () => {
 

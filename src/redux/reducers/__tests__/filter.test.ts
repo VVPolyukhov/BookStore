@@ -1,7 +1,7 @@
 import updateFilter from '../filter'
 
 import { setFilter, booksSearch } from '../../actions/filter'
-import { ReducerType } from '../../types'
+import { ReducerType } from '../../../types'
 
 describe('updateFilter function:', () => {
 

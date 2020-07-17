@@ -2,7 +2,7 @@ import { bookAddedToCart,
          updateShoppingCart,
          clearShoppingCart } from '../shopping-cart'
 import { CommentAction } from 'semantic-ui-react'
-import { CartItemType } from '../../types'
+import { CartItemType } from '../../../types'
 
 describe('Shopping-Cart Actions:', () => {
 

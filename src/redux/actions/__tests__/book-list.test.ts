@@ -11,8 +11,8 @@ import {
     booksLoaded,
     booksError
 } from '../book-list'
-import { BookType } from '../../types'
-import BookstoreService from '../../services/bookstore-service'
+import { BookType } from '../../../types'
+import BookstoreService from '../../../services/bookstore-service'
 
 const middlewares = [thunk, stringMiddleware]
 const mockStore = configureMockStore(middlewares)
