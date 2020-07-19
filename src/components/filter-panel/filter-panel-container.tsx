@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import SortingBlock from './sorting-block'
+import FilterPanel from './filter-panel'
 
 import { setFilter, SetFilterActionType } from '../../redux/actions/filter'
 import { ReducerType } from '../../types'
@@ -22,4 +22,4 @@ const mapDispatchToProps: MapDispatchToPropsType = {
 }
 
 export default connect<MapStateToPropsType, MapDispatchToPropsType, {}, ReducerType>
-                (mapStateToProps, mapDispatchToProps)(SortingBlock)
+                (mapStateToProps, mapDispatchToProps)(FilterPanel)

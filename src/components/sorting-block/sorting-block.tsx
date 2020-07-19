@@ -1,51 +1,15 @@
 import React from 'react'
-import { Grid, Menu, Button } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 
 import SearchPanelContainer from '../search-panel'
-import { ActionType } from '../../types'
+import FilterPanelContainer from '../filter-panel'
 
-interface PropsType {
-    setFilter: (filterBy: string) => ActionType, 
-    filterBy: string
-}
-
-const SortingBlock: React.FC<PropsType> = ({ setFilter, filterBy }) => {
+const SortingBlock: React.FC = () => {
 
     return (
         <Grid.Column width={3}>
             <SearchPanelContainer />
-            <Menu fluid tabular text vertical>
-                <Menu.Item header>Сортировать по:</Menu.Item>
-                <Menu.Item
-                    active={filterBy === 'popularity'}
-                    onClick={() => setFilter('popularity')}
-                >Популярности</Menu.Item>
-                <Menu.Item
-                    active={filterBy === 'low-price'}
-                    onClick={() => setFilter('low-price')}
-                >Цене (сначала дешевые)</Menu.Item>
-                <Menu.Item
-                    active={filterBy === 'high-price'}
-                    onClick={() => setFilter('high-price')}
-                >Цене (сначала дорогие)</Menu.Item>
-                <Menu.Item
-                    active={filterBy === 'bookName'}
-                    onClick={() => setFilter('bookName')}
-                >Названию книги</Menu.Item>
-                <Menu.Item
-                    active={filterBy === 'author'}
-                    onClick={() => setFilter('author')}
-                >Автору</Menu.Item>
-            </Menu>
-            {
-                filterBy === 'all' || filterBy === null ? 
-                <Button disabled
-                        size='small'>
-                    Отменить сортировку</Button> :
-                <Button onClick={() => setFilter('all')}
-                        size='small'>
-                    Отменить сортировку</Button>
-            }
+            <FilterPanelContainer />
         </Grid.Column>
     )
 }

@@ -1,3 +1,3 @@
-import SortingBlockContainer from "./sorting-block-container";
+import SortingBlock from "./sorting-block";
 
-export default SortingBlockContainer
+export default SortingBlock

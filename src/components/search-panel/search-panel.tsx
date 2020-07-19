@@ -8,7 +8,7 @@ interface PropsType {
     onSearch: (bookName : string) => void
 }
 
-const SearchPanel : React.FC<PropsType> = ({ term, onSearch }) => {
+const SearchPanel : React.FC<PropsType> = React.memo(({ term, onSearch }) => {
     return (
         <Menu.Item>
             <Input icon='search'
@@ -19,6 +19,6 @@ const SearchPanel : React.FC<PropsType> = ({ term, onSearch }) => {
                     />
         </Menu.Item>
     );
-};
+});
 
 export default SearchPanel

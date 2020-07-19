@@ -9,7 +9,8 @@ interface PropsType {
     orderTotal: number
 }
 
-const ShopHeader : React.FC<PropsType> = ( { numItems, orderTotal } ) => {
+const ShopHeader : React.FC<PropsType> = React.memo(( { numItems, orderTotal } ) => {
+    
     return (
         <header className='shop-header'>
             
@@ -32,6 +33,6 @@ const ShopHeader : React.FC<PropsType> = ( { numItems, orderTotal } ) => {
 
         </header>
     )
-}
+})
 
 export default ShopHeader

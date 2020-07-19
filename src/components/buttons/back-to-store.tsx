@@ -6,13 +6,13 @@ interface ChildComponentProps {
     history : History
 }
 
-const BackToStore: React.FC<ChildComponentProps> = ( { history } ) => {
+const BackToStore: React.FC<ChildComponentProps> = React.memo(( { history } ) => {
     return (
         <button className="btn btn-info"
             onClick={() => history.push('/')}>
             Вернуться к каталогу
         </button>
     )
-}
+})
 
 export default withRouter(BackToStore)
