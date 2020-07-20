@@ -1,5 +1,9 @@
-import compose from "./compose";
+import compose from './compose'
+import sortBy from './sortBy'
+import searchBooks from './searchBooks'
 
 export {
-    compose
+    compose,
+    sortBy, 
+    searchBooks
 }

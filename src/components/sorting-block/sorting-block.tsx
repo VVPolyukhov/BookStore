@@ -5,7 +5,6 @@ import SearchPanelContainer from '../search-panel'
 import FilterPanelContainer from '../filter-panel'
 
 const SortingBlock: React.FC = () => {
-
     return (
         <Grid.Column width={3}>
             <SearchPanelContainer />

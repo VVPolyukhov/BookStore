@@ -14,14 +14,14 @@ interface PropType {
 const BookListItem : React.FC<PropType> = ( { book, onAddedToCart, particularBook } ) => {
     
     const { id, title, author, price, image, rating } = book
+    const maxRating = 5
 
     return (
         <Card>
-            <div className="cover-image">
-                <Image src={image}
-                       alt='cover'
-                       ui={true} />
-            </div>
+            <Image src={image}
+                className='cover-image'
+                alt='cover'
+                ui={true} />
             <Card.Content>
                 <Card.Header className='text-center'>{title}</Card.Header>
                 <Card.Meta className='mt7 text-center'>{author}</Card.Meta>
@@ -29,8 +29,8 @@ const BookListItem : React.FC<PropType> = ( { book, onAddedToCart, particularBoo
             <Card.Content extra 
                           className='text-center'>
                 Рейтинг:&nbsp;&nbsp;
-                <Rating icon="star" rating={rating} maxRating={5} />
-                &nbsp;&nbsp;{rating} / 5
+                <Rating icon="star" rating={rating} maxRating={maxRating} />
+                &nbsp;&nbsp;{rating} / {maxRating}
             </Card.Content>
             <Card.Content extra>
                 <div className='text-center price-color'>

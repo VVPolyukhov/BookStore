@@ -12,6 +12,7 @@ import {
     ClearShoppingCartActionType
 } from '../../redux/actions/shopping-cart'
 import { ReducerType } from '../../types';
+import { getCartItems, getOrderTotal } from '../../redux/selectors/shopping-cart';
 
 interface MapStateToPropsType {
     items: Array<any>,
@@ -50,11 +51,10 @@ const ShoppingCartTableContainer: React.FC<PropsType> =
                               onClearCart={onClearCart}/>
 }
 
-const mapStateToProps = ({ shoppingCart: { cartItems, orderTotal } }: ReducerType)
-                        : MapStateToPropsType => {
+const mapStateToProps = (state: ReducerType): MapStateToPropsType => {
     return {
-        items: cartItems,
-        total: orderTotal
+        items: getCartItems(state),
+        total: getOrderTotal(state)
     }
 }
 

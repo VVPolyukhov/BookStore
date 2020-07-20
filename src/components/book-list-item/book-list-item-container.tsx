@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import BookListItem from './book-list-item'
 
 import { bookAddedToCart, BookAddedToCartActionType } from '../../redux/actions/shopping-cart'
-import { ReducerType, BookType, CartItemType } from '../../types'
+import { ReducerType, BookType } from '../../types'
+import { getParticularBookById } from '../../redux/selectors/book-list'
 
 interface MapStateToPropsType {
     particularBook: any
@@ -18,12 +19,13 @@ interface OwnPropsType {
     key: number  
 }
 
-const mapStateToProps = ({ shoppingCart: { cartItems } } : ReducerType, props : OwnPropsType)
-                        : MapStateToPropsType => {
-    return { particularBook: (cartItems.filter((item: CartItemType) => item.id === props.book.id)).shift() }
+const mapStateToProps = (state: ReducerType, props : OwnPropsType): MapStateToPropsType => {
+    return { 
+        particularBook: getParticularBookById(state, props)
+    }
 }
 
-const mapDispatchToProps : MapDispatchToPropsType = {
+const mapDispatchToProps: MapDispatchToPropsType = {
     onAddedToCart: bookAddedToCart
 }
 

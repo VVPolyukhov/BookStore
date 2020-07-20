@@ -2,17 +2,17 @@ import { connect } from 'react-redux'
 
 import ShopHeader from './shop-header'
 import { ReducerType } from '../../types' 
+import { getNumItems, getOrderTotal } from '../../redux/selectors/shopping-cart'
 
 interface MapStateToPropsType {
     numItems: number,
     orderTotal: number
 }
 
-const mapStateToProps = ( { shoppingCart: { numItems, orderTotal }}: ReducerType )
-                        : MapStateToPropsType => {
+const mapStateToProps = (state: ReducerType ): MapStateToPropsType => {
     return {
-        numItems,
-        orderTotal
+        numItems: getNumItems(state),
+        orderTotal: getOrderTotal(state)
     }
 }
 

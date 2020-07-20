@@ -7,7 +7,12 @@ import App from './app'
 import { updateShoppingCart, UpdateShoppingCartActionType } from '../../redux/actions/shopping-cart'
 import { setFilter, SetFilterActionType } from '../../redux/actions/filter'
 import { setBooks, SetBooksActionType } from '../../redux/actions/book-list'
+
 import { CartItemType, BookType, ReducerType } from '../../types'
+
+import { getCartItems, getOrderTotal, getNumItems } from '../../redux/selectors/shopping-cart'
+import { getBookList } from '../../redux/selectors/book-list'
+import { getFilterBy } from '../../redux/selectors/filter'
 
 interface MapStateToPropsType {
     cartItems: Array<CartItemType>,
@@ -64,10 +69,14 @@ const AppContainer: React.FC<PropsType> = (props) => {
     return <App />
 }
 
-const mapStateToProps = ({ shoppingCart: { cartItems, orderTotal, numItems },
-                           filter: { filterBy },
-                           bookList: { books } } : ReducerType) : MapStateToPropsType => {
-    return { cartItems, orderTotal, numItems, filterBy, books }
+const mapStateToProps = (state : ReducerType) : MapStateToPropsType => {
+    return { 
+        cartItems: getCartItems(state), 
+        orderTotal: getOrderTotal(state), 
+        numItems: getNumItems(state), 
+        filterBy: getFilterBy(state), 
+        books: getBookList(state) 
+    }
 }
 
 const mapDispatchToProps = (dispatch: Dispatch) : MapDispatchToPropsType => {
