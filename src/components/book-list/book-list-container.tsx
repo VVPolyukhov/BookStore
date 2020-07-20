@@ -23,9 +23,10 @@ interface MapDispatchToPropsType {
     fetchBooks: () => void
 }
 
-type PropsType = MapStateToPropsType & MapDispatchToPropsType
+export type PropsType = MapStateToPropsType & MapDispatchToPropsType
 
-const BookListContainer: React.FC<PropsType> = 
+// Exporting the component without HOC's
+export const BookListContainer: React.FC<PropsType> = 
     ({ books, loading, error, fetchBooks }) => {
 
     useEffect(() => {

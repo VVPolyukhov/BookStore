@@ -1,15 +1,17 @@
-import React from 'react';
-import { SetFilterActionType } from '../../redux/actions/filter'
+import React from 'react'
 import { Menu, Button } from 'semantic-ui-react'
 
 import './filter-panel.scss';
 
-interface PropsType {
+export interface PropsType {
     filterBy: string,
-    setFilter: (filterBy: string) => SetFilterActionType
+    setFilter: (filterBy: string) => void
 }
 
 const FilterPanel: React.FC<PropsType> = React.memo(({ filterBy, setFilter }) => {
+
+    const isDisabled = filterBy === 'all' || filterBy === null
+
     return (
         <>
             <Menu fluid tabular text vertical>
@@ -35,15 +37,11 @@ const FilterPanel: React.FC<PropsType> = React.memo(({ filterBy, setFilter }) =>
                     onClick={() => setFilter('author')}
                 >Автору</Menu.Item>
             </Menu>
-            {
-                filterBy === 'all' || filterBy === null ?
-                    <Button disabled
-                        size='small'>
-                        Отменить сортировку</Button> :
-                    <Button onClick={() => setFilter('all')}
-                        size='small'>
-                        Отменить сортировку</Button>
-            }
+            <Button disabled={isDisabled}
+                    onClick={() => setFilter('all')}
+                    size='small'>
+                Отменить сортировку
+            </Button>
         </>
     );
 });

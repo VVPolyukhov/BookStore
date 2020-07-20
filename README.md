@@ -14,6 +14,7 @@ Demo - https://vvpolyukhov.github.io/BookStore/
 * Redux
 * Redux Thunk
 * Jest
+* Enzyme
 * SCSS
 * Bootstrap
 * Semantic UI

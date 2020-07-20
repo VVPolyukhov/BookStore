@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterPanel: Button is available? renders properly 1`] = `
+<Fragment>
+  <Menu
+    fluid={true}
+    tabular={true}
+    text={true}
+    vertical={true}
+  >
+    <MenuItem
+      header={true}
+    >
+      Сортировать по:
+    </MenuItem>
+    <MenuItem
+      active={false}
+      onClick={[Function]}
+    >
+      Популярности
+    </MenuItem>
+    <MenuItem
+      active={false}
+      onClick={[Function]}
+    >
+      Цене (сначала дешевые)
+    </MenuItem>
+    <MenuItem
+      active={false}
+      onClick={[Function]}
+    >
+      Цене (сначала дорогие)
+    </MenuItem>
+    <MenuItem
+      active={false}
+      onClick={[Function]}
+    >
+      Названию книги
+    </MenuItem>
+    <MenuItem
+      active={true}
+      onClick={[Function]}
+    >
+      Автору
+    </MenuItem>
+  </Menu>
+  <Button
+    as="button"
+    disabled={false}
+    onClick={[Function]}
+    size="small"
+  >
+    Отменить сортировку
+  </Button>
+</Fragment>
+`;
+
+exports[`FilterPanel: Button is disabled? renders properly 1`] = `
+<Fragment>
+  <Menu
+    fluid={true}
+    tabular={true}
+    text={true}
+    vertical={true}
+  >
+    <MenuItem
+      header={true}
+    >
+      Сортировать по:
+    </MenuItem>
+    <MenuItem
+      active={false}
+      onClick={[Function]}
+    >
+      Популярности
+    </MenuItem>
+    <MenuItem
+      active={false}
+      onClick={[Function]}
+    >
+      Цене (сначала дешевые)
+    </MenuItem>
+    <MenuItem
+      active={false}
+      onClick={[Function]}
+    >
+      Цене (сначала дорогие)
+    </MenuItem>
+    <MenuItem
+      active={false}
+      onClick={[Function]}
+    >
+      Названию книги
+    </MenuItem>
+    <MenuItem
+      active={false}
+      onClick={[Function]}
+    >
+      Автору
+    </MenuItem>
+  </Menu>
+  <Button
+    as="button"
+    disabled={true}
+    onClick={[Function]}
+    size="small"
+  >
+    Отменить сортировку
+  </Button>
+</Fragment>
+`;

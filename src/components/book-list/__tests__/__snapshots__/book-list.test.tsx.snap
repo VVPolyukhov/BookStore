@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookList: renders properly 1`] = `
+<GridColumn
+  stretched={true}
+  width={13}
+>
+  <CardGroup
+    itemsPerRow={4}
+  >
+    <Connect(BookListItem)
+      book={
+        Object {
+          "author": "author1",
+          "id": 1,
+          "image": "url1",
+          "price": 100,
+          "rating": 1,
+          "title": "title1",
+        }
+      }
+      key="0"
+    />
+    <Connect(BookListItem)
+      book={
+        Object {
+          "author": "author2",
+          "id": 2,
+          "image": "url2",
+          "price": 200,
+          "rating": 2,
+          "title": "title2",
+        }
+      }
+      key="1"
+    />
+  </CardGroup>
+</GridColumn>
+`;

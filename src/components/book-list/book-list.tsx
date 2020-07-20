@@ -4,7 +4,7 @@ import { Grid, Card } from 'semantic-ui-react'
 import BookListItemContainer from '../book-list-item'
 import { BookType } from '../../types'
 
-interface PropsType {
+export interface PropsType {
     books: Array<BookType>
 }
 
