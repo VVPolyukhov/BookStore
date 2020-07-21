@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import BookList from './book-list'
 import Spinner from '../spinner'
 import ErrorIndicator from '../error-indicator'
-import { withBookstoreService } from '../hoc'
+import { withBookstoreService } from '../../hoc'
 
 import { compose } from '../../utils'
 
