@@ -20,9 +20,5 @@ const mapStateToProps = (state: ReducerType): MapStateToPropsType => {
     }
 }
 
-const mapDispatchToProps: MapDispatchToPropsType = {
-    setFilter
-}
-
 export default connect<MapStateToPropsType, MapDispatchToPropsType, {}, ReducerType>
-                (mapStateToProps, mapDispatchToProps)(FilterPanel)
+                (mapStateToProps, { setFilter })(FilterPanel)

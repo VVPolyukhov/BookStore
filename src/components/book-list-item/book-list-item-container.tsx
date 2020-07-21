@@ -25,9 +25,5 @@ const mapStateToProps = (state: ReducerType, props : OwnPropsType): MapStateToPr
     }
 }
 
-const mapDispatchToProps: MapDispatchToPropsType = {
-    onAddedToCart: bookAddedToCart
-}
-
 export default connect<MapStateToPropsType, MapDispatchToPropsType, OwnPropsType, ReducerType>
-                (mapStateToProps, mapDispatchToProps)(BookListItem)
+                (mapStateToProps, { onAddedToCart: bookAddedToCart })(BookListItem)

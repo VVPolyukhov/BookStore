@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, MutableRefObject } from 'react'
 import { connect } from 'react-redux'
-import { bindActionCreators, Dispatch } from 'redux'
 
 import App from './app'
 
@@ -79,14 +78,5 @@ const mapStateToProps = (state : ReducerType) : MapStateToPropsType => {
     }
 }
 
-const mapDispatchToProps = (dispatch: Dispatch) : MapDispatchToPropsType => {
-    return bindActionCreators({
-        updateShoppingCart,
-        setFilter,
-        setBooks
-    }, dispatch);
-};
-
 export default connect<MapStateToPropsType, MapDispatchToPropsType, {}, ReducerType>(
-                mapStateToProps, 
-                mapDispatchToProps)(AppContainer)
+                mapStateToProps, { updateShoppingCart, setFilter, setBooks })(AppContainer)

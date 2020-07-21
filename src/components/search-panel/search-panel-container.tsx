@@ -19,9 +19,5 @@ const mapStateToProps = (state : ReducerType): MapStateToPropsType => {
     }
 }
 
-const mapDispatchToProps: MapDispatchToPropsType = {
-    onSearch: booksSearch
-}
-
 export default connect<MapStateToPropsType, MapDispatchToPropsType, {}, ReducerType>
-                (mapStateToProps, mapDispatchToProps)(SearchPanel)
+                (mapStateToProps, { onSearch: booksSearch })(SearchPanel)

@@ -58,12 +58,12 @@ const mapStateToProps = (state: ReducerType): MapStateToPropsType => {
     }
 }
 
-const mapDispatchToProps : MapDispatchToPropsType = {
-    onIncrease: bookAddedToCart,
-    onDecrease: bookRemovedFromCart,
-    onDelete: allBooksRemovedFromCart,
-    onClearCart: clearShoppingCart
-}
-
-export default connect<MapStateToPropsType, MapDispatchToPropsType, {}, ReducerType>
-                (mapStateToProps, mapDispatchToProps)(ShoppingCartTableContainer)
+export default connect<MapStateToPropsType, MapDispatchToPropsType, {}, ReducerType>(
+    mapStateToProps,
+    {
+        onIncrease: bookAddedToCart,
+        onDecrease: bookRemovedFromCart,
+        onDelete: allBooksRemovedFromCart,
+        onClearCart: clearShoppingCart
+    })
+    (ShoppingCartTableContainer)
